@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="footer-license d-flex justify-content-between align-items-center">
+                <div className="footer-license d-flex flex-column flex-sm-row justify-content-between align-items-center">
                     <p>Copyright © 2024 4U All Rights Reserved.</p>
                     <a href="#">Điều khoản và Chính sách</a>
                 </div>

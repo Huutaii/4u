@@ -1,7 +1,10 @@
 .footer {
-    padding: 48px 0 16px;
+    padding: 48px 0 92px;
     background-color: #253041;
     color: #FFF;
+    @include respond-to(sm) {
+        padding: 48px 0 16px;
+    }
     img {
         width: 72px;
     }

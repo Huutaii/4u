@@ -1,11 +1,14 @@
 .header {
     z-index: 9;
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     padding: 8px 0;
     transition: all 0.35s ease;
+    @include respond-to(sm) {
+        top: 0;
+    }
     &-wraper {
         background-color: #FFFFFF;
         padding: 6px 16px;
@@ -16,19 +19,47 @@
         width: 54px;
     }
 
+    &-menu {
+        flex: 1;
+        @include respond-to(sm) {
+            flex: none;
+        }
+        & > div {
+            flex: 1;
+            @include respond-to(sm) {
+                flex: none;
+            }
+        }
+    }
     ul {
+        flex: 1;
+        gap: 8px;
         @include reset-ul;
-        gap: 24px;
+        @include respond-to(sm) {
+            flex: none;
+        }
         @include respond-to(lg) {
             gap: 24px;
         }
         li {
-            font-size: 14px;
-            line-height: 20px;
+            font-size: 12px;
+            line-height: 18px;
             font-weight: 500;
+            flex: 1;
+            @include respond-to(sm) {
+                flex: none;
+                font-size: 14px;
+                line-height: 20px;
+            }
             @include respond-to(lg) {
                 font-size: 16px;
                 line-height: 24px;
+            }
+            svg {
+                font-size: 24px;
+                @include respond-to(sm) {
+                    display: none;
+                }
             }
         }
     }
