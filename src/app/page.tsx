@@ -182,7 +182,7 @@ export default function Home() {
                                     <span className='h5'>cho một cuộc hành trình mới</span>
                                 </h2>
                                 <p className='mt-2 mt-lg-3'>Mọi cuộc hành trình đều bắt đầu từ một bước nhỏ. Hãy để chúng tôi trở thành đối tác của bạn! Dưới đây là các kênh liên hệ thuận tiện để bạn gửi thắc mắc hoặc yêu cầu hỗ trợ</p>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.518076121442!2d106.64740547691352!3d10.848144589305132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f6a71a06c3%3A0x7847cb03321c5b9e!2zUGjhuqFtIHbEg24gY2hpw6p1!5e0!3m2!1svi!2s!4v1731997031195!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.518076121442!2d106.64740547691352!3d10.848144589305132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f6a71a06c3%3A0x7847cb03321c5b9e!2zUGjhuqFtIHbEg24gY2hpw6p1!5e0!3m2!1svi!2s!4v1731997031195!5m2!1svi!2s" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                         <div className='col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5'>
@@ -194,19 +194,19 @@ export default function Home() {
                                 <form action="">
                                     <div className="form-floating mb-3">
                                         <input type="text" className="form-control" id="floatingName" placeholder="Họ và tên" />
-                                        <label for="floatingName">Họ và tên</label>
+                                        <label htmlFor="floatingName">Họ và tên</label>
                                     </div>
                                     <div className="form-floating mb-3">
                                         <input type="tel" className="form-control" id="floatingPhone" placeholder="Số điện thoại" />
-                                        <label for="floatingEmail">Số điện thoại</label>
+                                        <label htmlFor="floatingEmail">Số điện thoại</label>
                                     </div>
                                     <div className="form-floating mb-3">
                                         <input type="email" className="form-control" id="floatingEmail" placeholder="Email" />
-                                        <label for="floatingEmail">Email</label>
+                                        <label htmlFor="floatingEmail">Email</label>
                                     </div>
                                     <div className="form-floating">
                                         <textarea className="form-control" placeholder="Lời nhắn" id="floatingTextarea"></textarea>
-                                        <label for="floatingTextarea">Lời nhắn</label>
+                                        <label htmlFor="floatingTextarea">Lời nhắn</label>
                                     </div>
                                     <button className="btn justify-content-center rounded-4 w-100 mt-4">
                                         <VscGitStashApply/>

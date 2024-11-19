@@ -17,19 +17,19 @@ interface ArticleParams {
     id: string;
 }
 
-function addIdsToHeadings(containerSelector) {
-    const container = document.querySelector(containerSelector);
+function addIdsToHeadings(containerSelector: string): void {
+    const container = document.querySelector<HTMLElement>(containerSelector);
     if (container) {
-      const headings = container.querySelectorAll('h1, h2, h3, h4, h5, h6');
+      const headings = container.querySelectorAll<HTMLElement>('h1, h2, h3, h4, h5, h6');
       headings.forEach((heading, index) => {
         if (!heading.id) {
           // Tạo id dựa trên nội dung của tiêu đề hoặc chỉ số nếu cần
-          const text = heading.textContent.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
+          const text = heading.textContent?.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
           heading.id = text || `heading-${index}`;
         }
       });
     }
-  }
+}
 
 export default function ArticleDetail({ params }: { params: ArticleParams }) {
     const article = articles.find((item) => item.id === parseInt(params.id));

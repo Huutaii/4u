@@ -12,7 +12,7 @@ import cv from "../../../public/animations/cv.json";
 import test from "../../../public/animations/test.json";
 import interview from "../../../public/animations/interview.json";
 import work from "../../../public/animations/work.json";
-import jobs from '../../../public/dummy/jobs.json';
+import jobsData from '../../../public/dummy/jobs.json';
 import useResponsive from "../hooks/useResponsive";
 
 interface RecruitDescProps {
@@ -29,9 +29,13 @@ interface RecruitDescProps {
     description: string;
 }
 
+const jobs: RecruitDescProps[] = jobsData as RecruitDescProps[];
+
 export default function Recruit() {
     const isTabletOrBelow = useResponsive();
-    const [selectedJob, setSelectedJob] = useState<RecruitDescProps | null>(jobs.length > 0 ? jobs[0] : null);
+    const [selectedJob, setSelectedJob] = useState<RecruitDescProps | null>(
+        jobs.length > 0 ? jobs[0] : null
+    );
 
     return (
         <div className="recruit">
