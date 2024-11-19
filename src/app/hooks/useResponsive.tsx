@@ -2,19 +2,25 @@
 import { useState, useEffect } from 'react';
 
 const useResponsive = (breakpoint = 992) => {
-  const [isTabletOrBelow, setIsTabletOrBelow] = useState(window.innerWidth <= breakpoint);
+  const isClient = typeof window !== 'undefined';
+  const [isTabletOrBelow, setIsTabletOrBelow] = useState(
+    isClient ? window.innerWidth <= breakpoint : false
+  );
 
   useEffect(() => {
+    if (!isClient) return;
+
     const handleResize = () => {
       setIsTabletOrBelow(window.innerWidth <= breakpoint);
     };
 
-    window.addEventListener('resize', handleResize);
+    handleResize();
 
+    window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [breakpoint]);
+  }, [breakpoint, isClient]);
 
   return isTabletOrBelow;
 };
