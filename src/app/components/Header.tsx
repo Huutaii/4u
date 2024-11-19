@@ -43,7 +43,7 @@ const Header: React.FC = () => {
                             </ul>
                             <a href="tel:#" className="btn icon-decor d-none d-sm-inline-flex">
                                 Liên hệ
-                                <TiPhone />
+                                <TiPhone className="phone-ring" />
                             </a>
                         </div>
                     </div>

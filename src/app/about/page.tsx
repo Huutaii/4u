@@ -69,7 +69,7 @@ export default function About() {
             
             <section className="team">
                 <div className='container-lg'>
-                    <div className='row justify-content-between align-items-center gy-4 gx-5'>
+                    <div className='row justify-content-between align-items-center gy-4 gy-sm-5 gx-5'>
                         <div className='col-lg-4'>
                             <div className="team-info">
                                 <h2 className="fw-bold text-capitalize">Đội ngũ</h2>

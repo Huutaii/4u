@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Lottie from "lottie-react";
+import { Link as ScrollLink, Element } from "react-scroll";
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -105,26 +106,28 @@ export default function Recruit() {
                                 :
                                 <div className="recruit-list">
                                     { jobs.map((item, index) => (
-                                        <div className="recruit-item" key={index} onClick={() => setSelectedJob(item)}>
-                                            <div>
-                                                <p className="recruit-item__time text-sm">Đăng tuyển 3 ngày trước</p>
-                                                <p className="recruit-item__title text-md fw-semibold">{item.title}</p>
+                                        <ScrollLink to="target" duration={1000} offset={-100} key={index}>
+                                            <div className="recruit-item" onClick={() => setSelectedJob(item)}>
+                                                <div>
+                                                    <p className="recruit-item__time text-sm">Đăng tuyển 3 ngày trước</p>
+                                                    <p className="recruit-item__title text-md fw-semibold">{item.title}</p>
+                                                </div>
+                                                <ul className="recruit-item__info">
+                                                    <li className="text-sm mb-1">
+                                                        <CiDollar />
+                                                        <p>{item.salary}</p>
+                                                    </li>
+                                                    <li className="text-sm">
+                                                        <CiLocationOn />
+                                                        <p>{item.location}</p>
+                                                    </li>
+                                                </ul>
+                                                <ul className="recruit-item__more">
+                                                    <li className="text-sm">{item.type}</li>
+                                                    <li className="text-sm">{item.experience}</li>
+                                                </ul>
                                             </div>
-                                            <ul className="recruit-item__info">
-                                                <li className="text-sm mb-1">
-                                                    <CiDollar />
-                                                    <p>{item.salary}</p>
-                                                </li>
-                                                <li className="text-sm">
-                                                    <CiLocationOn />
-                                                    <p>{item.location}</p>
-                                                </li>
-                                            </ul>
-                                            <ul className="recruit-item__more">
-                                                <li className="text-sm">{item.type}</li>
-                                                <li className="text-sm">{item.experience}</li>
-                                            </ul>
-                                        </div>
+                                        </ScrollLink>
                                     ))}
                                 </div>
                             }
@@ -176,7 +179,7 @@ export default function Recruit() {
 const RecruitDesc: React.FC<RecruitDescProps> = ({ id, title, salary, location, type, qualification, experience, gender, publishAt, skill, description }) => {
     const [modalShow, setModalShow] = useState(false);
     return (
-        <>
+        <Element name="target">
             <div className="recruit-desc">
                 <div className="recruit-desc__heading">
                     <p className="h4 fw-bold text-center text-capitalize mb-3">{title}</p>
@@ -242,7 +245,7 @@ const RecruitDesc: React.FC<RecruitDescProps> = ({ id, title, salary, location, 
             </div>
 
             <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
-        </>
+        </Element>
     );
 };
 
@@ -258,6 +261,7 @@ const MyVerticallyCenteredModal: React.FC<MyVerticallyCenteredModalProps> = (pro
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
+            className="recruit-modal"
         >
             <Modal.Header closeButton />
             <Modal.Body>

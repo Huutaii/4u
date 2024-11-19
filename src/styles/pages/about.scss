@@ -109,6 +109,7 @@
     }
     .team {
         padding: 24px 0;
+        background-color: $primary-400;
         overflow: hidden;
         @include respond-to(sm) {
             padding: 40px 0;
@@ -139,6 +140,8 @@
             display: grid;
             gap: 2.5vw;
             grid-template-columns: repeat(2, 1fr);
+            max-width: 624px;
+            margin: 0 auto;
             @include respond-to(md) {
                 gap: 24px;
             }
@@ -160,12 +163,21 @@
                 }
             }
             &:nth-child(even) {
-                transform: translateY(5vw);
+                transform: translateY(2vw);
                 @include respond-to(md) {
-                    transform: translateY(48px);
+                    transform: translateY(14px);
                 }
                 @include respond-to(lg) {
-                    transform: translateY(72px);
+                    transform: translateY(24px);
+                }
+            }
+            &:nth-child(odd) {
+                transform: translateY(-2vw);
+                @include respond-to(md) {
+                    transform: translateY(-14px);
+                }
+                @include respond-to(lg) {
+                    transform: translateY(-24px);
                 }
             }
             &:first-child {
@@ -248,7 +260,7 @@
                     top: calc(100% + 4px);
                     width: calc(100% + 54px);
                     height: 1px;
-                    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);;
+                    background: linear-gradient(90deg, rgba(37, 48, 65, 1) 0%, rgba(37, 48, 65, 0) 100%);
                 }
             }
         }

@@ -43,22 +43,20 @@
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
+    gap: 10px;
+    padding: 8px 20px;
     font-weight: 500;
-    color: white !important;
+    color: white;
     background-color: $primary;
+    border: 2px solid $primary;
     border-radius: 99px;
-    &:hover {
-        background-color: #1967D2;
-    }
+
     svg {
         font-size: 20px;
     }
     &.icon-decor {
-        padding: 10px 10px 10px 20px;
+        padding: 6px 6px 6px 14px;
         svg {
-            padding: 2px;
             font-size: 32px;
             background-color: #FFFFFF;
             border-radius: 50%;
@@ -66,12 +64,15 @@
         }
     }
     &.btn-outline {
-        color: $primary !important;
+        color: $primary;
         background-color: transparent;
-        border: 2px solid $primary;
-        &:hover {
-            color: #FFFFFF !important;
-        }
+        border-color: $primary;
+    }
+
+    &:hover {
+        color: white !important;
+        background-color: #1967D2 !important;
+        border-color: #1967D2 !important;
     }
 }
 

@@ -22,7 +22,7 @@ const RecruitCta: React.FC = () => {
                                     <IoIosArrowRoundForward/>
                                 </a>
                                 <a href="tel:0123456789" className="recruit-cta__main--btn d-flex align-items-center column-gap-3">
-                                    <MdPhoneInTalk />
+                                    <MdPhoneInTalk className="phone-ring" />
                                     <div>
                                         <p className="text-sm">Cần tư vấn</p>
                                         <p className="text-lg fw-semibold">+0123 456 789</p>

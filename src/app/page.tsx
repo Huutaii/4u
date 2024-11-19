@@ -27,28 +27,25 @@ export default function Home() {
                 parallax={true}
                 speed={1200}
                 modules={[Autoplay, Parallax]}
-                onInit={() => console.log('slide init')}
-                onSlideChangeTransitionStart={() => console.log('slide change transition start')}
-                onSlideChangeTransitionEnd={() => console.log('slide change transition end')}
             >
                 {[
                     {
-                        label: 'Interior design',
-                        title: 'Little Cottage',
-                        subtitle: 'Сoncept',
-                        intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci distinctio iure, rerum non fugit.'
+                        label: 'Không gian',
+                        title: 'Căn hộ hiện đại, đầy đủ',
+                        subtitle: 'tiện nghi',
+                        intro: 'Trải nghiệm không gian sống tiện nghi, hiện đại, nơi mang lại sự thoải mái và phong cách cho cuộc sống của bạn.'
                     },
                     {
-                        label: 'Architecture',
-                        title: 'Compact House',
-                        subtitle: 'Project',
-                        intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci distinctio iure, rerum non fugit.'
+                        label: 'An ninh',
+                        title: 'Phòng trọ dịch vụ sạch sẽ,',
+                        subtitle: 'an ninh',
+                        intro: 'Phòng trọ được thiết kế tiện lợi, sạch sẽ, an ninh, mang đến sự an tâm với mức chi phí hợp lý nhất.'
                     },
                     {
-                        label: 'Interior design',
-                        title: 'Greenwell Yards',
-                        subtitle: 'Country house',
-                        intro: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci distinctio iure, rerum non fugit.'
+                        label: 'Dịch vụ',
+                        title: 'Không gian sống phù hợp mọi',
+                        subtitle: 'nhu cầu',
+                        intro: 'Tận hưởng cuộc sống trọn vẹn với không gian hiện đại, đầy đủ tiện ích và dịch vụ chăm sóc chuyên nghiệp.'
                     }
                     ].map((banner, index) => (
                         <SwiperSlide key={index}>
@@ -74,10 +71,10 @@ export default function Home() {
                         <div className="col-lg-6 col-md-12">
                             <div className="home-about__left">
                                 <div className="home-about__left--content d-flex flex-column align-items-start gap-4">
-                                    <p className="home-about__left--content--subtitle h4 fw-light">Design, followed by Form &amp; Function.</p>
-                                    <h2 className="h3 fw-extrabold">Exploring the Quality Ways through Design.</h2>
-                                    <p className="home-about__left--content--intro">We are uncompetitor in architectural solutions Friendly neighbour there that power.Keep away Architecture who try to Ambitions people do that really </p>
-                                    <a href="/about">Read More</a>
+                                    <p className="home-about__left--content--subtitle h4 fw-light">Kiến tạo không gian sống lý tưởng cho mọi nhu cầu</p>
+                                    <h2 className="h3 fw-extrabold">Khởi nguồn cho mọi hành trình</h2>
+                                    <p className="home-about__left--content--intro">Chúng tôi là 4U, chuyên cung cấp dịch vụ thuê căn hộ và nhà trọ tiện nghi, an toàn, phù hợp với mọi nhu cầu. Với sứ mệnh mang đến không gian sống thoải mái, chúng tôi đồng hành cùng bạn trên hành trình tìm kiếm một nơi chốn thuộc về.</p>
+                                    <a href="/about" className='btn btn-outline'>Đọc thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -86,8 +83,8 @@ export default function Home() {
                                 <div className="home-about__imgs__item">
                                     <img className="w-100 h-100 object-fit-cover" src="imgs/habout1.jpg" alt="image1" />
                                     <div className="home-about__imgs__item--info">
-                                        <span className="home-about__imgs__item--info--title">working experience</span>
-                                        <p className="home-about__imgs__item--info--label">Year</p>
+                                        <span className="home-about__imgs__item--info--title">Kinh nghiệm</span>
+                                        <p className="home-about__imgs__item--info--label">Năm</p>
                                         <p className="home-about__imgs__item--info--number">10</p>
                                     </div>
                                 </div>
