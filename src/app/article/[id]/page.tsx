@@ -1,6 +1,6 @@
 'use client'
 import { useEffect } from 'react';
-import tocbot from 'tocbot';
+const tocbot = require('tocbot');
 
 import { LuUser2 } from "react-icons/lu";
 import { SiFacebook, SiZalo, SiLinkedin } from "react-icons/si";
