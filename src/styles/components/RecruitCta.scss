@@ -1,0 +1,66 @@
+.recruit-cta {
+    position: relative;
+    padding: 40px 0;
+    @include respond-to(xl) {
+        padding: 60px 0;
+    }
+    img, &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    img {
+        mix-blend-mode: luminosity;
+    }
+    &::before {
+        z-index: 1;
+        content: '';
+        background: linear-gradient(270deg, rgba(37, 48, 65, 0.55) 0%, rgba(37, 48, 65, 0.95) 100%);
+        @include respond-to(lg) {
+            background: linear-gradient(90deg, rgba(37, 48, 65, 0.55) 0%, rgba(37, 48, 65, 0.95) 100%);
+        }
+    }
+    &__main {
+        z-index: 1;
+        position: relative;
+        color: #FFFFFF;
+        &--btn {
+            position: relative;
+            p {
+                transition: 0.35s ease;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                width: 48px;
+                height: 48px;
+                border: 1px solid #FFFFFF;
+                border-radius: 50%;
+                left: calc(0% - 10px);
+                transition: 0.35s ease;
+            }
+            svg {
+                font-size: 28px;
+            }
+            &:hover {
+                color: #FFFFFF;
+                &::before {
+                    width: calc(100% + 22px);
+                    border-radius: 99px;
+                    transition-delay: 0.35s;
+                }
+                p {
+                    &:first-child {
+                        opacity: 0;
+                    }
+                    &:last-child {
+                        transform: translateY(-10px);
+                        transition-delay: 0.35s;
+                    }
+                }
+            }
+        }
+    }
+}

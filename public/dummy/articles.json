@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "title": "Lợi Ích Khi Thuê Nhà Trọ Tại Thành Phố Lớn",
+        "intro": "Những ưu điểm và thách thức của việc thuê nhà trọ tại các thành phố lớn, nơi có nhu cầu cao về chỗ ở.",
+        "thumbnail": "https://images.unsplash.com/photo-1490309465502-86ef8656e567?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "author": "Hữu Minh",
+        "publishAt": "20/04/2024",
+        "tag": ["Tin tức", "Mẹo"],
+        "isFeatured": false
+    },
+    {
+        "id": 2,
+        "title": "Căn Hộ Mini – Giải Pháp Tiết Kiệm Cho Người Thu Nhập Trung Bình",
+        "intro": "Căn hộ mini đang trở thành xu hướng với chi phí phải chăng và tiện ích vừa đủ cho nhu cầu sinh hoạt.",
+        "thumbnail": "https://images.unsplash.com/photo-1529408632839-a54952c491e5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "author": "Khánh Linh",
+        "publishAt": "15/03/2024",
+        "tag": ["Tư vấn", "Xu hướng"],
+        "isFeatured": false
+    },
+    {
+        "id": 3,
+        "title": "Những Điều Cần Biết Khi Thuê Phòng Trọ Cho Sinh Viên",
+        "intro": "Hướng dẫn chi tiết để sinh viên có thể chọn lựa được phòng trọ phù hợp, an toàn và tiện lợi.",
+        "thumbnail": "https://images.unsplash.com/photo-1494458453337-e9062e968178?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "author": "Minh Đức",
+        "publishAt": "10/02/2024",
+        "tag": ["Hướng dẫn", "Sinh viên"],
+        "isFeatured": true
+    },
+    {
+        "id": 4,
+        "title": "Top 5 Khu Vực Cho Thuê Căn Hộ Giá Tốt Tại TP. Hồ Chí Minh",
+        "intro": "Tổng hợp những khu vực phổ biến và lý tưởng để tìm căn hộ với giá hợp lý tại TP. Hồ Chí Minh.",
+        "thumbnail": "https://images.unsplash.com/photo-1609145535763-457a8364f45b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "author": "Thanh Hùng",
+        "publishAt": "01/05/2024",
+        "tag": ["Bất động sản", "Lựa chọn"],
+        "isFeatured": false
+    },
+    {
+        "id": 5,
+        "title": "Những Lưu Ý Khi Ký Hợp Đồng Thuê Nhà",
+        "intro": "Kinh nghiệm và những điều cần lưu ý khi ký hợp đồng thuê nhà để tránh rủi ro pháp lý.",
+        "thumbnail": "https://images.unsplash.com/photo-1664463760781-f159dfe3af30?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "author": "Ngọc Bảo",
+        "publishAt": "05/06/2024",
+        "tag": ["Kinh nghiệm", "Pháp lý"],
+        "isFeatured": true
+    },
+    {
+        "id": 6,
+        "title": "Cách Tìm Nhà Trọ Nhanh Chóng Và Hiệu Quả",
+        "intro": "Những mẹo hữu ích giúp bạn tìm kiếm nhà trọ phù hợp một cách nhanh chóng và tiết kiệm thời gian.",
+        "thumbnail": "https://images.unsplash.com/photo-1679108229150-ec593f1ed0f4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "author": "Phương Vy",
+        "publishAt": "12/06/2024",
+        "tag": ["Tin tức", "Mẹo"],
+        "isFeatured": true
+    },
+    {
+        "id": 7,
+        "title": "Các Tiện Ích Nên Có Khi Thuê Căn Hộ",
+        "intro": "Tìm hiểu về các tiện ích cần thiết nên xem xét khi thuê căn hộ để có trải nghiệm sống tốt hơn.",
+        "thumbnail": "https://images.unsplash.com/photo-1502672023488-70e25813eb80",
+        "author": "Hoài Nam",
+        "publishAt": "08/07/2024",
+        "tag": ["Tư vấn", "Tiện ích"],
+        "isFeatured": false
+    },
+    {
+        "id": 8,
+        "title": "Ưu Và Nhược Điểm Của Việc Thuê Nhà Dài Hạn",
+        "intro": "Phân tích những lợi ích và hạn chế của việc thuê nhà dài hạn để bạn có thể đưa ra quyết định hợp lý.",
+        "thumbnail": "https://images.unsplash.com/photo-1527772482340-7895c3f2b3f7?q=80&w=2751&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "author": "Thu Ngân",
+        "publishAt": "20/08/2024",
+        "tag": ["Tư vấn", "Kinh nghiệm"],
+        "isFeatured": false
+    },
+    {
+        "id": 9,
+        "title": "Bí Quyết Chọn Nhà Trọ An Toàn Và Tiện Lợi",
+        "intro": "Những tiêu chí quan trọng cần biết để lựa chọn nhà trọ an toàn và đầy đủ tiện nghi.",
+        "thumbnail": "https://images.unsplash.com/photo-1486304873000-235643847519?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "author": "Mai Lan",
+        "publishAt": "01/09/2024",
+        "tag": ["Mẹo", "Hướng dẫn"],
+        "isFeatured": true
+    }
+]

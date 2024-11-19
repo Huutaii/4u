@@ -1,0 +1,25 @@
+.article {
+    .heading {
+        padding: 8rem 0 16px;
+        @include respond-to(sm) {
+            padding: 14rem 0 24px;
+        }
+        @include respond-to(lg) {
+            padding: 16rem 0 4rem;
+        }
+    }
+    .article-slider {
+        padding: 16px 0;
+        @include respond-to(sm) {
+            padding: 48px 0;
+        }
+    }
+
+    &-main {
+        &__grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

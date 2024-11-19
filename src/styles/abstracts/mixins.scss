@@ -1,0 +1,42 @@
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == xs {
+        @media (min-width: #{$breakpoint-xs}) {
+            @content;
+        }
+    } @else if $breakpoint == sm {
+        @media (min-width: #{$breakpoint-sm}) {
+            @content;
+        }
+    } @else if $breakpoint == md {
+        @media (min-width: #{$breakpoint-md}) {
+            @content;
+        }
+    } @else if $breakpoint == lg {
+        @media (min-width: #{$breakpoint-lg}) {
+            @content;
+        }
+    } @else if $breakpoint == xl {
+        @media (min-width: #{$breakpoint-xl}) {
+            @content;
+        }
+    } @else if $breakpoint == xxl {
+        @media (min-width: #{$breakpoint-xxl}) {
+            @content;
+        }
+    }
+}
+
+@mixin line-clamp($number: 1) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $number;
+}
+
+@mixin reset-ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}

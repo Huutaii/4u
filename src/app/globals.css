@@ -1,0 +1,182 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+
+/* Slider Project */
+
+.mry-project-slider-item {
+	width: 100vw;
+	min-height: 100%;
+	height: 100vh;
+}
+
+.mry-project-slider-item .mry-project-frame {
+	width: 100%;
+	height: 100%;
+}
+
+.mry-project-slider-item .mry-project-frame .mry-cover-frame {
+	float: right;
+	width: 80%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.mry-project-slider-item .mry-project-frame .mry-cover-frame .mry-project-cover {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.mry-project-slider-item .mry-project-frame .mry-cover-frame .mry-project-cover.mry-position-center {
+	object-position: center;
+}
+
+.mry-project-slider-item .mry-project-frame .mry-cover-frame .mry-project-cover.mry-position-left {
+	object-position: left;
+}
+
+.mry-project-slider-item .mry-project-frame .mry-cover-frame .mry-project-cover.mry-position-right {
+	object-position: right;
+}
+
+.mry-project-slider-item .mry-project-frame .mry-cover-overlay {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	right: 0;
+	background-color: rgba(255, 255, 255, 0);
+	width: 100%;
+	height: 100%;
+}
+
+.mry-project-slider-item .mry-project-frame .mry-cover-overlay.mry-gradient-overlay {
+	background-image: linear-gradient(269deg, rgba(247, 248, 250, 0) 70%, rgba(247, 248, 250, 0.6) 80%, #f7f8fa 100%);
+}
+
+.mry-project-slider-item .mry-project-frame.mry-project-half {
+	width: 100%;
+	height: 100%;
+}
+
+.mry-project-slider-item .mry-project-frame.mry-project-half .mry-cover-frame {
+	float: right;
+	width: 60%;
+	height: 100%;
+	position: relative;
+}
+
+.mry-project-slider-item .mry-main-title-frame {
+	position: absolute;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+}
+
+.mry-project-slider-item .mry-main-title-frame .mry-main-title {
+	width: 100%;
+}
+
+.mry-project-slider-item .mry-main-title-frame .mry-main-title h1 {
+	text-shadow: 0 0 40px rgba(247, 248, 250, 0.5);
+}
+
+/* Slider Project after 992px ---*/
+
+@media (max-width: 992px) {
+	.mry-project-slider-item .mry-project-frame .mry-main-title-frame .mry-main-title h1 {
+		font-size: 54px;
+		line-height: 60px;
+	}
+	.mry-project-slider-item .mry-project-frame .mry-cover-frame {
+		width: 100%;
+	}
+	.mry-project-slider-item .mry-project-frame .mry-cover-frame .mry-project-cover {
+		object-position: center !important;
+	}
+}
+
+/*--- Slider Project after 768px ---*/
+
+@media (max-width: 768px) {
+	.mry-project-slider-item .mry-project-frame .mry-cover-overlay.mry-gradient-overlay {
+		background-color: rgba(255, 255, 255, 0);
+		background-image: none;
+	}
+	.mry-project-slider-item .mry-project-frame .mry-main-title-frame {
+		left: 0;
+		width: 100%;
+		align-items: flex-end;
+	}
+	.mry-project-slider-item .mry-project-frame .mry-main-title-frame .mry-main-title {
+		margin-left: -15px;
+		padding: 40px;
+		background-color: #f7f8fa;
+		width: 100%;
+		max-width: 430px;
+	}
+	.mry-project-slider-item .mry-project-frame .mry-main-title-frame .mry-main-title h1 {
+		position: relative;
+		overflow: hidden;
+		font-size: 32px;
+		line-height: 38px;
+		font-weight: 900;
+		letter-spacing: -1px;
+	}
+	.mry-project-slider-item .mry-project-frame .mry-main-title-frame .mry-main-title .mry-mb-20 {
+		margin-bottom: 10px;
+	}
+	.mry-project-slider-item .mry-project-frame .mry-main-title-frame .mry-main-title .mry-mb-30 {
+		margin-bottom: 15px;
+	}
+	.mry-project-slider-item .mry-project-frame.mry-project-half .mry-cover-frame {
+		width: 100%;
+	}
+}

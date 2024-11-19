@@ -1,0 +1,19 @@
+.ads {
+    &__item {
+        padding: 24px 32px;
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+        img {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        p {
+            span {
+                color: $primary;
+            }
+        }
+    }
+}

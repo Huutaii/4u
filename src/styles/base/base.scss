@@ -1,0 +1,120 @@
+.fw-extrabold {
+    font-weight: 800;
+}
+.fw-black {
+    font-weight: 900;
+}
+
+.line-clamp-1 {
+    @include line-clamp(1);
+}
+.line-clamp-2 {
+    @include line-clamp(2);
+}
+.line-clamp-3 {
+    @include line-clamp(3);
+}
+
+.heading {
+    position: relative;
+    &::before, img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &::before {
+        z-index: 1;
+        content: '';
+        background-image: linear-gradient(0deg, rgba(250, 250, 250, 1) 0%, rgba(250, 250, 250, 0.75) 100%);
+    }
+    & > div {
+        z-index: 1;
+    }
+}
+
+.stroke {
+    -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+} 
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: white !important;
+    background-color: $primary;
+    border-radius: 99px;
+    svg {
+        font-size: 20px;
+    }
+    &:hover {
+        background-color: #1967D2;
+    }
+}
+
+.search {
+    position: relative;
+    input {
+        width: 100%;
+        padding: 18px 172px 18px 28px;
+        border-radius: 99px;
+        border: none;
+        outline: none;
+        transition: 0.35s ease;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+    button {
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.sidebar {
+    position: sticky;
+    top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.swiper-article {
+    padding-bottom: 32px;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%);
+    .swiper-slide {
+        & > * {
+            @include respond-to(sm) {
+                width: 404px;
+            }
+        }
+    }
+}
+
+.swiper-recruit {
+    padding: 24px 0;
+    .swiper-slide {
+        & > * {
+            @include respond-to(xs) {
+                width: 308px;
+            }
+        }
+    }
+}
+
+.mil-lines {
+    opacity: 0.05;
+    pointer-events: none;
+    path {
+        stroke: rgb(0, 0, 0);
+    }
+}
+
+.mil-move {
+    animation: move 10s linear infinite;
+}
