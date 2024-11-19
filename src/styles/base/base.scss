@@ -49,13 +49,32 @@
     color: white !important;
     background-color: $primary;
     border-radius: 99px;
-    svg {
-        font-size: 20px;
-    }
     &:hover {
         background-color: #1967D2;
     }
+    svg {
+        font-size: 20px;
+    }
+    &.icon-decor {
+        padding: 10px 10px 10px 20px;
+        svg {
+            padding: 2px;
+            font-size: 32px;
+            background-color: #FFFFFF;
+            border-radius: 50%;
+            color: $primary;
+        }
+    }
+    &.btn-outline {
+        color: $primary !important;
+        background-color: transparent;
+        border: 2px solid $primary;
+        &:hover {
+            color: #FFFFFF !important;
+        }
+    }
 }
+
 
 .search {
     position: relative;

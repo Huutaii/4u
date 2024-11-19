@@ -1,4 +1,5 @@
 import { MdPhoneInTalk } from "react-icons/md";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 import '@/styles/components/RecruitCta.scss';
 
@@ -16,7 +17,10 @@ const RecruitCta: React.FC = () => {
                                 <span className="h4">Gia nhập cùng chúng tôi</span>
                             </p>
                             <div className="d-flex flex-wrap-reverse align-items-center row-gap-3 column-gap-5 mt-3 mt-xl-4">
-                                <a href="/recruit" className="btn">Ứng tuyển</a>
+                                <a href="/recruit" className="btn icon-decor">
+                                    Ứng tuyển
+                                    <IoIosArrowRoundForward/>
+                                </a>
                                 <a href="tel:0123456789" className="recruit-cta__main--btn d-flex align-items-center column-gap-3">
                                     <MdPhoneInTalk />
                                     <div>

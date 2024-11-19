@@ -9,7 +9,10 @@
         }
     }
     .story {
-        padding: 60px 0;
+        padding: 40px 0;
+        @include respond-to(lg) {
+            padding: 60px 0;
+        }
         &-heading {
             position: sticky;
             top: 6rem;
@@ -105,8 +108,14 @@
         }
     }
     .team {
-        padding: 80px 0;
+        padding: 24px 0;
         overflow: hidden;
+        @include respond-to(sm) {
+            padding: 40px 0;
+        }
+        @include respond-to(lg) {
+            padding: 80px 0;
+        }
         &-info {
             display: flex;
             flex-direction: column;
@@ -123,16 +132,6 @@
                 font-weight: 300;
                 span {
                     font-weight: 500;
-                }
-            }
-            .btn {
-                padding: 10px 10px 10px 20px;
-                svg {
-                    padding: 2px;
-                    font-size: 32px;
-                    background-color: #FFFFFF;
-                    border-radius: 50%;
-                    color: $primary;
                 }
             }
         }
@@ -235,7 +234,10 @@
     }
 
     .award {
-        padding: 80px 0;
+        padding: 48px 0;
+        @include respond-to(lg) {
+            padding: 80px 0;
+        }
         &-heading {
             p {
                 position: relative;

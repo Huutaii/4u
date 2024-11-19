@@ -1,4 +1,5 @@
-import { FaPhone, FaNewspaper } from "react-icons/fa";
+import { FaNewspaper } from "react-icons/fa";
+import { TiPhone } from "react-icons/ti";
 import { VscHome, VscGitStashApply } from "react-icons/vsc";
 import { TbInfoSquareRounded } from "react-icons/tb";
 
@@ -40,9 +41,9 @@ const Header: React.FC = () => {
                                     </a>
                                 </li>
                             </ul>
-                            <a href="tel:#" className="btn d-none d-sm-inline-flex">
+                            <a href="tel:#" className="btn icon-decor d-none d-sm-inline-flex">
                                 Liên hệ
-                                <FaPhone />
+                                <TiPhone />
                             </a>
                         </div>
                     </div>

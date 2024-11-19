@@ -11,6 +11,7 @@ import articles from '../../public/dummy/articles.json';
 import useResponsive from './hooks/useResponsive';
 
 import { VscGitStashApply } from "react-icons/vsc";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 export default function Home() {
     const isTabletOrBelow = useResponsive();
@@ -166,7 +167,10 @@ export default function Home() {
                         </div>
                     }
                     <div className="text-center mt-lg-4">
-                        <a href="/article" className="btn">Xem tất cả</a>
+                        <a href="/article" className="btn icon-decor">
+                            Xem tất cả
+                            <IoIosArrowRoundForward/>
+                        </a>
                     </div>
                 </div>
             </section>

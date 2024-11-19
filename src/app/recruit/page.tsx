@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Lottie from "lottie-react";
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 import { CiSearch, CiDollar, CiLocationOn, CiMedal, CiPen } from "react-icons/ci";
 import { PiBriefcaseLight, PiGenderIntersex } from "react-icons/pi";
 import { VscGitStashApply } from "react-icons/vsc";
@@ -171,69 +174,142 @@ export default function Recruit() {
 }
 
 const RecruitDesc: React.FC<RecruitDescProps> = ({ id, title, salary, location, type, qualification, experience, gender, publishAt, skill, description }) => {
+    const [modalShow, setModalShow] = useState(false);
     return (
-        <div className="recruit-desc">
-            <div className="recruit-desc__heading">
-                <p className="h4 fw-bold text-center text-capitalize mb-3">{title}</p>
-                <ul>
-                    <li className="text-sm">
-                        <CiLocationOn />
-                        <div>
-                            <p className="text-sm fw-semibold">Địa điểm</p>
-                            <p>{location}</p>
-                        </div>
-                    </li>
-                    <li>
-                        <CiDollar />
-                        <div>
-                            <p className="text-sm fw-semibold">Mức lương</p>
-                            <p>{salary}</p>
-                        </div>
-                    </li>
-                    <li>
-                        <PiBriefcaseLight />
-                        <div>
-                            <p className="text-sm fw-semibold">Hình thức</p>
-                            <p>{type}</p>
-                        </div>
-                    </li>
-                    <li>
-                        <CiMedal />
-                        <div>
-                            <p className="text-sm fw-semibold">Trình độ</p>
-                            <p>{qualification}</p>
-                        </div>
-                    </li>
-                    <li>
-                        <CiPen />
-                        <div>
-                            <p className="text-sm fw-semibold">Kinh nghiệm</p>
-                            <p>{experience}</p>
-                        </div>
-                    </li>
-                    <li>
-                        <PiGenderIntersex />
-                        <div>
-                            <p className="text-sm fw-semibold">Giới tính</p>
-                            <p>{gender === 0 ? "Nữ" : gender === 1 ? "Nam" : "Không"}</p>
-                        </div>
-                    </li>
-                </ul>
+        <>
+            <div className="recruit-desc">
+                <div className="recruit-desc__heading">
+                    <p className="h4 fw-bold text-center text-capitalize mb-3">{title}</p>
+                    <ul>
+                        <li className="text-sm">
+                            <CiLocationOn />
+                            <div>
+                                <p className="text-sm fw-semibold">Địa điểm</p>
+                                <p>{location}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <CiDollar />
+                            <div>
+                                <p className="text-sm fw-semibold">Mức lương</p>
+                                <p>{salary}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <PiBriefcaseLight />
+                            <div>
+                                <p className="text-sm fw-semibold">Hình thức</p>
+                                <p>{type}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <CiMedal />
+                            <div>
+                                <p className="text-sm fw-semibold">Trình độ</p>
+                                <p>{qualification}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <CiPen />
+                            <div>
+                                <p className="text-sm fw-semibold">Kinh nghiệm</p>
+                                <p>{experience}</p>
+                            </div>
+                        </li>
+                        <li>
+                            <PiGenderIntersex />
+                            <div>
+                                <p className="text-sm fw-semibold">Giới tính</p>
+                                <p>{gender === 0 ? "Nữ" : gender === 1 ? "Nam" : "Không"}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <article dangerouslySetInnerHTML={{ __html: description }}>
+                </article>
+                <div className="recruit-desc__footer">
+                    <p>Kỹ năng</p>
+                    <ul>
+                        {skill.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+                <button className="btn justify-content-center rounded-4 w-100 mt-4" onClick={() => setModalShow(true)}>
+                    <VscGitStashApply/>
+                    Ứng tuyển
+                </button>
             </div>
-            <article dangerouslySetInnerHTML={{ __html: description }}>
-            </article>
-            <div className="recruit-desc__footer">
-                <p>Kỹ năng</p>
-                <ul>
-                    {skill.map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))}
-                </ul>
-            </div>
-            <button className="btn justify-content-center rounded-4 w-100 mt-4">
-                <VscGitStashApply/>
-                Ứng tuyển
-            </button>
-        </div>
+
+            <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+        </>
     );
 };
+
+interface MyVerticallyCenteredModalProps {
+    show: boolean;
+    onHide: () => void;
+}
+const MyVerticallyCenteredModal: React.FC<MyVerticallyCenteredModalProps> = (props) => {
+    return (
+        <Modal
+            {...props}
+            scrollable={true}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton />
+            <Modal.Body>
+                <Form>
+                    <h4 className="fw-bold mb-3">Biểu mẫu ứng tuyển</h4>
+                    <div>
+                        <FloatingLabel controlId="floatingName" label="Họ và tên" className="mb-2">
+                            <Form.Control type="name" placeholder="Họ và tên" />
+                        </FloatingLabel>
+                        <FloatingLabel controlId="floatingPhone" label="Số điện thoại" className="mb-2">
+                            <Form.Control type="phone" placeholder="Số điện thoại" />
+                        </FloatingLabel>
+                        <FloatingLabel controlId="floatingEmail" label="Email" className="mb-2">
+                            <Form.Control type="email" placeholder="Email" />
+                        </FloatingLabel>
+                        <FloatingLabel controlId="floatingTextarea" label="Mô tả đôi chút về bản thân" className="mb-2">
+                            <Form.Control as="textarea" placeholder="Mô tả đôi chút về bản thân" style={{ height: '200px' }} />
+                        </FloatingLabel>
+                        <Form.Group className="position-relative">
+                            <Form.Control
+                                type="file"
+                                required
+                                name="file"
+                            />
+                            <Form.Control.Feedback type="invalid" tooltip>
+                            </Form.Control.Feedback>
+                        </Form.Group>
+                    </div>
+                    <h4 className="fw-bold mb-3 mt-4">Đánh giá năng lực</h4>
+                    <div>
+                        <div className="mb-2">
+                            <p className="mb-1"><span className="fw-semibold">Câu 1:</span> Aliquet blandit erat commodo laoreet faucibus; turpis lorem maecenas elementum.</p>
+                            <Form.Control as="textarea" rows={3} />
+                        </div>
+                        <div className="mb-2">
+                            <p className="mb-1"><span className="fw-semibold">Câu 2:</span> Lorem ipsum odor amet, consectetuer adipiscing elit.</p>
+                            <Form.Control as="textarea" rows={3} />
+                        </div>
+                        <div>
+                            <p className="mb-1"><span className="fw-semibold">Câu 3:</span> Duis non mattis leo molestie natoque montes neque. Pharetra facilisi morbi ullamcorper elit taciti dapibus.</p>
+                            <Form.Check type="radio" name='sentences1' id='sentences1-1' label='Diam potenti consequat a molestie' />
+                            <Form.Check type="radio" name='sentences1' id='sentences1-2' label='Condimentum in leo eu neque' />
+                            <Form.Check type="radio" name='sentences1' id='sentences1-3' label='Venenatis curae mollis phasellus felis vivamus laoreet vel placerat.' />
+                            <Form.Check type="radio" name='sentences1' id='sentences1-4' label='Pharetra facilisi morbi ullamcorper elit taciti dapibus' />
+                        </div>
+                    </div>
+                </Form>
+            </Modal.Body>
+            <Modal.Footer>
+                <button className="btn btn-outline" onClick={props.onHide}>Huỷ</button>
+                <button className="btn">Nộp CV</button>
+            </Modal.Footer>
+        </Modal>
+    );
+}
