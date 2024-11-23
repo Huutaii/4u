@@ -1,5 +1,9 @@
 @mixin respond-to($breakpoint) {
-    @if $breakpoint == xs {
+    @if $breakpoint == tn {
+        @media (min-width: #{$breakpoint-tn}) {
+            @content;
+        }
+    } @else if $breakpoint == xs {
         @media (min-width: #{$breakpoint-xs}) {
             @content;
         }
@@ -23,6 +27,14 @@
         @media (min-width: #{$breakpoint-xxl}) {
             @content;
         }
+    } @else if $breakpoint == largeXl {
+        @media (min-width: #{$breakpoint-largeXl}) {
+            @content;
+        }
+    } @else if $breakpoint == extraXl {
+        @media (min-width: #{$breakpoint-extraXl}) {
+            @content;
+        }
     }
 }
 
@@ -39,4 +51,11 @@
     margin-bottom: 0;
     display: flex;
     align-items: center;
+}
+
+@mixin color-text($opacity: 1) {
+    color: rgba(52, 52, 54, $opacity);
+}
+@mixin color-primary-400($opacity: 1) {
+    color: rgba(229, 240, 255, $opacity);
 }

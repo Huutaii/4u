@@ -1,5 +1,5 @@
-.fw-extrabold {
-    font-weight: 800;
+.fw-black {
+    font-weight: 900;
 }
 .fw-black {
     font-weight: 900;
@@ -27,7 +27,7 @@
     &::before {
         z-index: 1;
         content: '';
-        background-image: linear-gradient(0deg, rgba(250, 250, 250, 1) 0%, rgba(250, 250, 250, 0.75) 100%);
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.75) 100%);
     }
     & > div {
         z-index: 1;
@@ -71,8 +71,8 @@
 
     &:hover {
         color: white !important;
-        background-color: #1967D2 !important;
-        border-color: #1967D2 !important;
+        background-color: $primary-600 !important;
+        border-color: $primary-600 !important;
     }
 }
 

@@ -13,7 +13,7 @@ export default function About() {
                 <img className="w-100 h-100 object-fit-cover" src='imgs/heading.jpg' alt="article" />
                 <div className='position-relative'>
                     <div className='container-lg'>
-                        <h1 className='fw-extrabold'>
+                        <h1 className='fw-black'>
                             Về Chúng Tôi
                         </h1>
                     </div>
@@ -48,17 +48,17 @@ export default function About() {
                             <div className="story-strategic">
                                 <div>
                                     <RiSeedlingFill />
-                                    <p className="h6 fw-semibold mb-2">Tầm nhìn</p>
+                                    <p className="h6 fw-bold mb-2">Tầm nhìn</p>
                                     <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Ullamcorper viverra sociosqu venenatis vel, in sapien. Faucibus id at lobortis litora accumsan platea cursus vitae.</p>
                                 </div>
                                 <div>
                                     <RiFireFill />
-                                    <p className="h6 fw-semibold mb-2">Sứ mệnh</p>
+                                    <p className="h6 fw-bold mb-2">Sứ mệnh</p>
                                     <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Ullamcorper viverra sociosqu venenatis vel, in sapien. Faucibus id at lobortis litora accumsan platea cursus vitae.</p>
                                 </div>
                                 <div>
                                     <RiCoreosFill />
-                                    <p className="h6 fw-semibold mb-2">Giá trị cốt lõi</p>
+                                    <p className="h6 fw-bold mb-2">Giá trị cốt lõi</p>
                                     <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Ullamcorper viverra sociosqu venenatis vel, in sapien. Faucibus id at lobortis litora accumsan platea cursus vitae.</p>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@ export default function About() {
                                 ].map((item, index) => (
                                     <div key={index}>
                                         <p>{item.time}</p>
-                                        <h3 className="h6 fw-semibold">{item.title}</h3>
+                                        <h3 className="h6 fw-bold">{item.title}</h3>
                                         <p className="mt-3">{item.subtitle}</p>
                                     </div>
                                 ))}

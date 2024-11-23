@@ -18,7 +18,6 @@
                 width: 194px;
             }
             &__body {
-                gap: 8px;
                 &--title a {
                     @include line-clamp(1);
                 }
@@ -33,12 +32,8 @@
             }
             &__body {
                 margin: -48px 0 0 20px;
-                gap: 8px;
                 background-color: rgba(255, 255, 255, 1);
                 box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-                @include respond-to(sm) {
-                    gap: 14px;
-                }
                 &--title a {
                     @include line-clamp(2);
                 }
@@ -68,15 +63,13 @@
         }
     }
     &__body {
+        flex-grow: 1;
         padding: 16px 20px;
         display: flex;
         flex-direction: column;
+        gap: 8px;
         border-radius: 16px 0 16px 16px;
         transition: all 0.45s ease;
-        p {
-            font-size: 14px;
-            line-height: 20px;
-        }
         &--tag {
             p {
                 padding: 4px 12px;
@@ -90,10 +83,15 @@
         &--title {
             font-size: 20px;
             line-height: 26px;
-            font-weight: 600;
+            font-weight: 700;
         }
         &--intro {
+            @include color-text(0.85);
             @include line-clamp(2);
+        }
+        &--author, &--time {
+            font-size: 14px;
+            line-height: 20px;
         }
         &--author {
             svg {
@@ -104,7 +102,7 @@
             }
         }
         &--time {
-            color: $gray-800;
+            @include color-text(0.5);
         }
     }
 }

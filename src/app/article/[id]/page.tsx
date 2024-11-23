@@ -58,7 +58,7 @@ export default function ArticleDetail({ params }: { params: ArticleParams }) {
                 <div className='position-relative'>
                     <div className='container-lg'>
                         <div className="article-detail__heading">
-                            <h1 className='fw-extrabold'>{article.title}</h1>
+                            <h1 className='fw-black'>{article.title}</h1>
                             <div className="d-flex flex-wrap justify-content-between align-items-center gap-4 mt-3">
                                 <div className="article-detail__heading--author d-flex align-items-center gap-2">
                                     <LuUser2 />
@@ -82,7 +82,7 @@ export default function ArticleDetail({ params }: { params: ArticleParams }) {
                     </div>
                 </div>
             </section>
-            <section>
+            <section className='article-detail__main'>
                 <div className='container-lg'>
                     <div className='row justify-content-center gy-4'>
                         <div className='col-md-10 col-lg-8'>
@@ -129,11 +129,7 @@ export default function ArticleDetail({ params }: { params: ArticleParams }) {
                     </div>
                 </div>
             </section>
-            <section>
-                <div className='container-lg'>
-                    <ArticleSlider title="Có thể bạn quan tâm"/>
-                </div>
-            </section>
+            <ArticleSlider title="Có thể bạn quan tâm"/>
         </div>
     );
 }

@@ -8,14 +8,16 @@
             padding: 16rem 0 4rem;
         }
     }
-    .article-slider {
-        padding: 16px 0;
-        @include respond-to(sm) {
-            padding: 48px 0;
-        }
-    }
 
     &-main {
+        padding: 24px 0;
+        background: url('/imgs/wave.png') no-repeat center;
+        background-size: contain;
+        background-attachment: fixed;
+        @include respond-to(extraXl) {
+            background-size: cover;
+            background-attachment: unset;
+        }
         &__grid {
             display: grid;
             gap: 24px;

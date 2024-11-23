@@ -1,4 +1,5 @@
 .category {
+    background-color: #FFFFFF;
     border: 1px solid $gray-600;
     border-radius: 16px;
     & > div:first-child {
@@ -26,7 +27,7 @@
             }
             & > div {
                 p:last-child {
-                    color: $gray-800;
+                    @include color-text(0.5);
                 }
             }
         }

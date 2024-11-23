@@ -11,7 +11,7 @@ const CategoryTop: React.FC = () => {
         <section className="category">
             <div className="d-flex align-items-center gap-2">
                 <TbListNumbers />
-                <p className="text-sm fw-semibold">Top 5 danh mục</p>
+                <p className="text-sm fw-bold">Top 5 danh mục</p>
             </div>
             <ul>
                 { categories.map((item, index) => (
@@ -20,7 +20,7 @@ const CategoryTop: React.FC = () => {
                             <img className="object-fit-cover" src={item.thumbnail} alt={item.title} />
                         </a>
                         <div>
-                            <a href="#" className="fw-semibold">{item.title}</a>
+                            <a href="#" className="fw-bold">{item.title}</a>
                             <p className="text-sm d-flex align-items-center gap-1"><HiOutlineFire/> {item.children} bài</p>
                         </div>
                     </li>

@@ -15,7 +15,7 @@ export default function Article() {
                 <img className="w-100 h-100 object-fit-cover" src='imgs/heading.jpg' alt="article" />
                 <div className='position-relative'>
                     <div className='container-lg'>
-                        <h1 className='fw-extrabold'>
+                        <h1 className='fw-black'>
                             Khám Phá Các Bài Viết
                             <br />
                             <span className="stroke">Nổi Bật</span>
@@ -27,7 +27,7 @@ export default function Article() {
             <section className='article-main'>
                 <div className="container-lg">
                     <div className='mb-4'>
-                        <h2 className="h4 fw-extrabold">Thư Viện Bài Viết Đặc Sắc</h2>
+                        <h2 className="h4 fw-black">Thư Viện Bài Viết Đặc Sắc</h2>
                         <p className="">Nơi hội tụ các ý tưởng sáng tạo và thông tin hữu ích.</p>
                     </div>
                     <div className="row gy-4">

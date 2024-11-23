@@ -71,8 +71,8 @@ export default function Home() {
                         <div className="col-lg-6 col-md-12">
                             <div className="home-about__left">
                                 <div className="home-about__left--content d-flex flex-column align-items-start gap-4">
-                                    <p className="home-about__left--content--subtitle h4 fw-light">Kiến tạo không gian sống lý tưởng cho mọi nhu cầu</p>
-                                    <h2 className="h3 fw-extrabold">Khởi nguồn cho mọi hành trình</h2>
+                                    <p className="home-about__left--content--subtitle h5 fw-light">Kiến tạo không gian sống lý tưởng cho mọi nhu cầu</p>
+                                    <h2 className="h3 fw-black">Khởi nguồn cho mọi hành trình</h2>
                                     <p className="home-about__left--content--intro">Chúng tôi là 4U, chuyên cung cấp dịch vụ thuê căn hộ và nhà trọ tiện nghi, an toàn, phù hợp với mọi nhu cầu. Với sứ mệnh mang đến không gian sống thoải mái, chúng tôi đồng hành cùng bạn trên hành trình tìm kiếm một nơi chốn thuộc về.</p>
                                     <a href="/about" className='btn btn-outline'>Đọc thêm</a>
                                 </div>
@@ -107,9 +107,9 @@ export default function Home() {
 
             <section className="home-article">
                 <div className="container-lg">
-                    <div className="text-center mb-3 mb-lg-4">
-                        <p>News & Updates</p>
-                        <h2 className="h3 fw-extrabold">Recent Articles</h2>
+                    <div className="home-article__heading text-center mb-3 mb-lg-4">
+                        <p>Tâm Điểm</p>
+                        <h2 className="h3 fw-black">Thông Tin Hữu Ích</h2>
                     </div>
                     { isTabletOrBelow ?
                         <Swiper
@@ -178,7 +178,7 @@ export default function Home() {
                         <div className='col-11 col-sm-10 col-md-8 col-lg-6'>
                             <div className='contact-heading'>
                                 <h2 className='h4'>
-                                    <span className='fw-semibold'>Bạn đã sẵn sàng</span>
+                                    <span className='fw-bold'>Bạn đã sẵn sàng</span>
                                     <br />
                                     <span className='h5'>cho một cuộc hành trình mới</span>
                                 </h2>
@@ -189,7 +189,7 @@ export default function Home() {
                         <div className='col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5'>
                             <div className='contact-form'>
                                 <div className='mb-4'>
-                                    <p className='text-md fw-semibold mb-2'>Điền vào form dưới đây để đăng ký tư vấn từ 4U Chúng tôi!</p>
+                                    <p className='text-md fw-bold mb-2'>Điền vào form dưới đây để đăng ký tư vấn từ 4U Chúng tôi!</p>
                                     <p className='text-sm'>Sau khi nhấn gửi bạn sẽ được bộ phận hỗ trợ tư vấn liên hệ ngay nhé! Sẽ không lâu đâu</p>
                                 </div>
                                 <form action="">
@@ -242,7 +242,7 @@ export default function Home() {
                 >
                     {['google', 'facebook', 'airbnb', 'traveloka', 'agoda', 'booking', 'trivago', 'go2joy', 'chotot'].map((item, index) => (
                         <SwiperSlide key={index}>
-                            <img className="w-100 h-100 object-fit-contain" src={`imgs/${item}.png`} alt="partner"/>
+                            <img className="w-100 h-100 object-fit-contain" src={`imgs/partner/${item}.png`} alt="partner"/>
                         </SwiperSlide>
                     ))}
                 </Swiper>

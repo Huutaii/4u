@@ -63,8 +63,6 @@
                 transition: all 0.75s ease;
             }
             &--label {
-                font-size: 14px;
-                line-height: 20px;
                 font-weight: 500;
                 display: flex;
                 align-items: center;
@@ -185,22 +183,20 @@
                     text-align: end;
                     background-color: rgba(255, 255, 255, 0.9);
                     & > * {
-                        max-width: 92px;
+                        // max-width: 92px;
                     }
                     &--title {
                         line-height: 20px;
                         font-weight: 500;
                     }
                     &--label {
-                        font-family: 'Oswald', sans-serif !important;
                         font-size: 48px;
                         line-height: 54px;
-                        font-weight: 500;
+                        font-weight: 700;
                     }
                     &--number {
-                        font-family: 'Oswald', sans-serif !important;
-                        font-size: 92px;
-                        line-height: 88px;
+                        font-size: 112px;
+                        line-height: 104px;
                         font-weight: 900;
                         opacity: 0.25;
                         -webkit-text-fill-color: rgba(0, 0, 0, 0);
@@ -219,6 +215,26 @@
         @include respond-to(lg) {
             padding: 80px 0;
         }
+        &__heading {
+            p {
+                margin-bottom: 8px;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                &::before, &::after {
+                    content: '';
+                    // display: block;
+                    height: 1px;
+                    width: 48px;
+                }
+                &::before {
+                    background: linear-gradient(270deg, rgba(37, 48, 65, 1) 0%, rgba(37, 48, 65, 0) 100%);
+                }
+                &::after {
+                    background: linear-gradient(90deg, rgba(37, 48, 65, 1) 0%, rgba(37, 48, 65, 0) 100%);
+                }
+            }
+        }
         &__wrapper {
             display: grid;
             column-gap: 24px;
@@ -234,20 +250,15 @@
                     grid-area: item1;
                     .article-item {
                         &__thumbnail {
-                            @include respond-to(lg) {
-                                aspect-ratio: 4/3.4 !important;
-                            }
-                            @include respond-to(xl) {
-                                aspect-ratio: 4/3.15 !important;
-                            }
+                            aspect-ratio: 5/4 !important;
                             @include respond-to(xxl) {
                                 aspect-ratio: 4/3 !important;
                             }
                         }
                         &__body {
                             &--intro {
-                                -webkit-line-clamp: 1 !important;
-                                @include respond-to(xl) {
+                                -webkit-line-clamp: 3 !important;
+                                @include respond-to(xxl) {
                                     -webkit-line-clamp: 2 !important;
                                 }
                             }
@@ -257,12 +268,9 @@
                 &:nth-child(n+2) {
                     .article-item {
                         &__thumbnail {
-                            width: 160px !important;
+                            width: 164px !important;
                             @include respond-to(xl) {
-                                width: 180px !important;
-                            }
-                            @include respond-to(xxl) {
-                                width: 194px !important;
+                                width: 188px !important;
                             }
                         }
                         &__body {
@@ -282,7 +290,7 @@
 
 .contact {
     padding: 40px 0;
-    background-color: #F4F7FB;
+    background-color: $primary-400;
     &-heading {
         height: 100%;
         display: flex;

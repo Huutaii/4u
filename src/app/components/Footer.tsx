@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                     </div>
                     <div className="col-6 col-md-4 col-xl-2">
                         <div className="footer-menu">
-                            <p className="text-lg fw-semibold mb-3">Thông tin</p>
+                            <p className="text-lg fw-bold mb-3">Thông tin</p>
                             <ul>
                                 <li>
                                     <a href="/about">Giới thiệu</a>
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
                     </div>
                     <div className="col-6 col-md-4 col-xl-2">
                         <div className="footer-menu">
-                            <p className="text-lg fw-semibold mb-3">Dịch vụ</p>
+                            <p className="text-lg fw-bold mb-3">Dịch vụ</p>
                             <ul>
                                 <li>
                                     <a href="#">Thuê trọ</a>
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                     </div>
                     <div className="col-md-4 col-xl-4">
                         <div className="footer-menu">
-                            <p className="text-lg fw-semibold mb-3">Liên hệ</p>
+                            <p className="text-lg fw-bold mb-3">Liên hệ</p>
                             <ul>
                                 <li className="mb-3">Đường Phạm Văn Chiêu, quận Gò Vấp, Hồ Chí minh</li>
                                 <li>

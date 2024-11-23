@@ -15,7 +15,7 @@ const ArticleSlider: React.FC<ArticleSliderProps> = ({ title }) => {
     return (
         <section className='article-slider'>
             <div className="container-lg">
-                { title && <h2 className="h3 fw-semibold mb-4">{title}</h2> }
+                { title && <h2 className="h4 fw-bold mb-4">{title}</h2> }
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={24}

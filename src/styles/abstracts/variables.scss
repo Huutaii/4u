@@ -1,19 +1,22 @@
 // Breakpoint variables following Bootstrap standards
-$breakpoint-xs: 425px;        // Extra small devices (portrait phones)
-$breakpoint-sm: 576px;    // Small devices (landscape phones)
-$breakpoint-md: 768px;    // Medium devices (tablets)
-$breakpoint-lg: 992px;    // Large devices (desktops)
-$breakpoint-xl: 1200px;   // Extra large devices (large desktops)
-$breakpoint-xxl: 1400px;  // Extra extra large devices (larger desktops)
+$breakpoint-tn: 360px;
+$breakpoint-xs: 425px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+$breakpoint-largeXl: 1920px;
+$breakpoint-extraXl: 2560px;
 
 // Colors
-$primary-800: #253041;
-$primary-700: #0E397B;
-$primary: #0279FF;
-$primary-400: #F4F7FB;
+$primary-700: #003889;
+$primary-600: #015CD1;
+$primary: #0068FF;
+$primary-400: #E5F0FF;
 $primary-200: #F9FCFF;
 $gray-800: #A6A6A6;
 $gray-600: #E0E0E0;
 $gray: #F0F0F0;
-$text: #12223e;
-$bg: #F4F7FB;
+$text: #343436;
+$bg: #F6F7FA;

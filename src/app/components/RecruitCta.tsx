@@ -12,7 +12,7 @@ const RecruitCta: React.FC = () => {
                     <div className="col-lg-6">
                         <div className="recruit-cta__main">
                             <p className="h3 text-capitalize">
-                                <span className="fw-extrabold">Dẫn lối tương lai</span>
+                                <span className="fw-black">Dẫn lối tương lai</span>
                                 <br />
                                 <span className="h4">Gia nhập cùng chúng tôi</span>
                             </p>
@@ -25,7 +25,7 @@ const RecruitCta: React.FC = () => {
                                     <MdPhoneInTalk className="phone-ring" />
                                     <div>
                                         <p className="text-sm">Cần tư vấn</p>
-                                        <p className="text-lg fw-semibold">+0123 456 789</p>
+                                        <p className="text-lg fw-bold">+0123 456 789</p>
                                     </div>
                                 </a>
                             </div>

@@ -6,7 +6,7 @@ const Ads: React.FC = () => {
         <div className="ads">
             <div className="ads__item">
                 <img className="w-100 h-100 object-fit-cover" src='/imgs/h72.jpg' alt="h72" />
-                <p className="h5 fw-semibold">
+                <p className="h5 fw-bold">
                     <span>Ứng tuyển</span>
                     <br />
                     ngay
