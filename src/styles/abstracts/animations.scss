@@ -1,3 +1,85 @@
+// Default options
+$defaultDuration: .3s;
+$primaryColour: #ececec;
+$secondaryColour: #666;
+$shadowColour: rgba(0, 0, 0, .6);
+
+// As is often the case, some devices/browsers need additional code to get CSS to work
+// in the most desired way. These mixins are used to quickly drop in hacks for each element
+@mixin hideTapHighlightColor() {
+    //Prevent highlight colour when element is tapped
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@mixin hardwareAccel() {
+    //Improve performance on mobile/tablet devices
+    transform: translateZ(0);
+}
+
+@mixin improveAntiAlias() {
+    //Improve aliasing on mobile/tablet devices
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+/* Hover */
+@keyframes hover {
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.hover {
+    display: inline-block;
+    transition-duration: .5s;
+    transition-property: transform;
+
+    @include hideTapHighlightColor();
+    @include hardwareAccel();
+    @include improveAntiAlias();
+
+    transform: translateY(-10px);
+    animation-name: hover;
+    animation-duration: 1.5s;
+    animation-delay: $defaultDuration;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+/* Hang */
+@keyframes hang {
+    50% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+.hang {
+    display: inline-block;
+    transition-duration: .5s;
+    transition-property: transform;
+
+    @include hideTapHighlightColor();
+    @include hardwareAccel();
+    @include improveAntiAlias();
+
+    transform: translateY(10px);
+    animation-name: hang;
+    animation-duration: 1.5s;
+    animation-delay: $defaultDuration;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 @keyframes slide-top {
     0% {
         transform: translateY(0);

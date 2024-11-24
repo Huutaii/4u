@@ -1,4 +1,5 @@
 .home {
+    overflow: hidden;
     .swiper-slide-active {
         .hero-item {
             &__content {
@@ -97,9 +98,13 @@
             position: relative;
             z-index: 1;
             &--content {
-                padding: 40px 30px;
-                margin: 50px 40px;
+                padding: 24px 16px;
+                margin: 32px 14px;
                 background-color: rgba(255, 255, 255, 1);
+                @include respond-to(sm) {
+                    padding: 40px 30px;
+                    margin: 50px 40px;
+                }
                 &::before, &::after {
                     content: '';
                     position: absolute;
@@ -111,13 +116,19 @@
                 }
                 &::before {
                     left: -2px;
-                    bottom: -50px;
+                    bottom: -32px;
                     animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse;
+                    @include respond-to(sm) {
+                        bottom: -50px;
+                    }
                 }
                 &::after {
                     right: -2px;
                     top: -50px;
                     animation: slide-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse;
+                    @include respond-to(sm) {
+                        top: -32px;
+                    }
                 }
                 .btn {
                     color: $text;
@@ -127,7 +138,7 @@
         }
         &__imgs {
             display: grid;
-            grid-gap: 24px;
+            grid-gap: 3.5vw;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto auto auto auto;
             grid-template-areas: 
@@ -138,6 +149,9 @@
                 "item3 item4"
                 "item3 item4"
                 "item3 item4";
+            @include respond-to(sm) {
+                grid-gap: 24px;
+            }
             &__item {
                 @for $i from 1 through 4 {
                     &:nth-child(#{$i}) {
@@ -182,26 +196,56 @@
                     align-items: end;
                     text-align: end;
                     background-color: rgba(255, 255, 255, 0.9);
-                    & > * {
-                        // max-width: 92px;
-                    }
                     &--title {
-                        line-height: 20px;
+                        font-size: 2.5vw;
+                        line-height: 3vw;
                         font-weight: 500;
+                        @include respond-to(md) {
+                            font-size: 1.75vw;
+                            line-height: 2vw;
+                        }
+                        @include respond-to(lg) {
+                            line-height: 20px;
+                            font-weight: 500;
+                        }
                     }
                     &--label {
-                        font-size: 48px;
-                        line-height: 54px;
+                        font-size: 6vw;
+                        line-height: 7vw;
                         font-weight: 700;
+                        @include respond-to(md) {
+                            font-size: 4vw;
+                            line-height: 5vw;
+                        }
+                        @include respond-to(lg) {
+                            font-size: 38px;
+                            line-height: 40px;
+                        }
+                        @include respond-to(xl) {
+                            font-size: 48px;
+                            line-height: 54px;
+                        }
                     }
                     &--number {
-                        font-size: 112px;
-                        line-height: 104px;
+                        font-size: 16vw;
+                        line-height: 15vw;
                         font-weight: 900;
                         opacity: 0.25;
                         -webkit-text-fill-color: rgba(0, 0, 0, 0);
                         -webkit-text-stroke-width: 2px;
                         -webkit-text-stroke-color: #000;
+                        @include respond-to(md) {
+                            font-size: 12vw;
+                            line-height: 11vw;
+                        }
+                        @include respond-to(lg) {
+                            font-size: 102px;
+                            line-height: 92px;
+                        }
+                        @include respond-to(xl) {
+                            font-size: 112px;
+                            line-height: 104px;
+                        }
                     }
                 }
             }
@@ -288,56 +332,9 @@
     }
 }
 
-.contact {
-    padding: 40px 0;
-    background-color: $primary-400;
-    &-heading {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        @include respond-to(lg) {
-            text-align: start;
-        }
-        iframe {
-            margin-top: 16px;
-            flex-grow: 1;
-            width: 100%;
-            border-radius: 16px;
-            aspect-ratio: 16/9;
-            @include respond-to(lg) {
-                margin-top: 24px;
-                aspect-ratio: unset;
-            }
-        }
-    }
-    &-form {
-        padding: 16px;
-        background-color: #FFFFFF;
-        border-radius: 16px;
-        border: 1px solid $primary;
-        & > div {
-            padding: 24px 16px;
-            color: #FFFFFF;
-            background: linear-gradient(93.06deg, rgba(14, 57, 123, 1) 0%, rgba(14, 57, 123, 0.75) 100%);
-            border-radius: 16px;
-        }
-        form {
-            input, textarea {
-                border-top: none;
-                border-left: none;
-                border-right: none;
-                box-shadow: none !important;
-                border-radius: 0;
-            }
-            button {
-                background-color: rgba(14, 57, 123, 1);
-            }
-        }
-    }
-}
-
 .partner {
+    position: relative;
+    z-index: 1;
     mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%);
     .swiper {
         &-wrapper {
@@ -362,6 +359,163 @@
                 &:hover {
                     opacity: 1;
                     filter: brightness(100%) contrast(100%) saturate(100%) blur(0px) hue-rotate(0deg);
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    padding: 48px 0;
+    background-image: radial-gradient($primary-400 2px, transparent 2px);
+    background-size: 36px 36px;
+    @include respond-to(md) {
+        padding: 72px 0 64px 0;
+    }
+    @include respond-to(lg) {
+        padding: 92px 0 72px 0;
+    }
+    @include respond-to(xl) {
+        padding: 120px 0;
+    }
+    & > * {
+        position: relative;
+        & > *:not(span) {
+            position: relative;
+            z-index: 1;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: -18rem;
+            right: -24rem;
+            width: 800px;
+            height: 800px;
+            background: $primary;
+            border-radius: 50%;
+            opacity: 0.2;
+            filter: blur(150px);
+        }
+    }
+
+    &__content {
+        overflow: hidden;
+        border-radius: 32px;
+        box-shadow: 0px 12px 32px 0px rgba(0, 104, 255, 0.3);
+        &__top {
+            padding: 18px 32px;
+            background-color: #FFF;
+            @include respond-to(sm) {
+                padding: 24px 32px;
+            }
+        }
+        &__body {
+            padding: 24px;
+            background: url("/imgs/parttern_bg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right;
+            color: #FFF;
+            @include respond-to(sm) {
+                padding: 32px;
+                background-position: center;
+            }
+            &--des {
+                font-size: 14px;
+                line-height: 20px;
+                @include respond-to(lg) {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+            &--btn {
+                .btn {
+                    padding: 4px 20px;
+                    background-color: rgba(52, 52, 54, 0.65);
+                    border-color: transparent !important;
+                    @include respond-to(sm) {
+                        padding: 6px 24px;
+                    }
+                    &:hover {
+                        background-color: rgba(229, 240, 255, 0.5) !important;
+                    }
+                    img {
+                        width: 32px;
+                    }
+                    div {
+                        text-align: start;
+                        & > p {
+                            &:first-child {
+                                font-size: 12px;
+                                line-height: 16px;
+                            }
+                            &:last-child {
+                                font-size: 16px;
+                                line-height: 20px;
+                                @include respond-to(sm) {
+                                    font-size: 18px;
+                                    line-height: 24px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &--qrcode {
+                div:has(img) {
+                    flex-shrink: 0;
+                    padding: 4px;
+                    width: 64px;
+                    background-color: #FFFFFF;
+                    border-radius: 8px;
+                    @include respond-to(md) {
+                        width: 84px;
+                    }
+                }
+            }
+        }
+    }
+    &__img {
+        @include respond-to(md) {
+            width: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        &--wrap {
+            img {
+                width: calc(50% - 24px);
+                @include respond-to(sm) {
+                    width: 32vw;
+                }
+                @include respond-to(md) {
+                    width: 20vw;
+                }
+                @include respond-to(lg) {
+                    width: 192px;
+                }
+                @include respond-to(xl) {
+                    width: 242px;
+                }
+                &:first-child {
+                    margin-top: 24px;
+                    @include respond-to(md) {
+                        margin-top: -10vw;
+                    }
+                    @include respond-to(lg) {
+                        margin-top: -124px;
+                    }
+                }
+                &:last-child {
+                    margin-top: 54px;
+                    @include respond-to(md) {
+                        margin-top: 8vw;
+                    }
+                    @include respond-to(lg) {
+                        margin-top: 54px;
+                    }
                 }
             }
         }

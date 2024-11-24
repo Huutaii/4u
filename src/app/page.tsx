@@ -5,6 +5,7 @@ import '@/styles/pages/home.scss';
 
 import { Autoplay, Parallax } from 'swiper/modules';
 import RecruitCta from "./components/RecruitCta";
+import ArticleSlider from './components/ArticleSlider';
 import ArticleItem from "./components/ArticleItem";
 
 import articles from '../../public/dummy/articles.json';
@@ -67,10 +68,10 @@ export default function Home() {
             
             <section className="home-about">
                 <div className="container-lg">
-                    <div className="row align-items-center">
-                        <div className="col-lg-6 col-md-12">
+                    <div className="row justify-content-center align-items-center">
+                        <div className="col-md-9 col-lg-6">
                             <div className="home-about__left">
-                                <div className="home-about__left--content d-flex flex-column align-items-start gap-4">
+                                <div className="home-about__left--content d-flex flex-column align-items-start gap-2 gap-sm-3 gap-lg-4">
                                     <p className="home-about__left--content--subtitle h5 fw-light">Kiến tạo không gian sống lý tưởng cho mọi nhu cầu</p>
                                     <h2 className="h3 fw-black">Khởi nguồn cho mọi hành trình</h2>
                                     <p className="home-about__left--content--intro">Chúng tôi là 4U, chuyên cung cấp dịch vụ thuê căn hộ và nhà trọ tiện nghi, an toàn, phù hợp với mọi nhu cầu. Với sứ mệnh mang đến không gian sống thoải mái, chúng tôi đồng hành cùng bạn trên hành trình tìm kiếm một nơi chốn thuộc về.</p>
@@ -78,7 +79,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-6 col-md-12">
+                        <div className="col-sm-10 col-md-8 col-lg-6">
                             <div className="home-about__imgs">
                                 <div className="home-about__imgs__item">
                                     <img className="w-100 h-100 object-fit-cover" src="imgs/habout1.jpg" alt="image1" />
@@ -112,37 +113,7 @@ export default function Home() {
                         <h2 className="h3 fw-black">Thông Tin Hữu Ích</h2>
                     </div>
                     { isTabletOrBelow ?
-                        <Swiper
-                            slidesPerView={1}
-                            spaceBetween={24}
-                            autoplay
-                            loop={true}
-                            speed={1250}
-                            modules={[Autoplay]}
-                            breakpoints={{
-                                576: {
-                                    slidesPerView: "auto",
-                                },
-                            }}
-                            className="swiper-article"
-                        >
-                            { articles
-                            .filter(item => item.isFeatured === true)
-                            .map((item, index) => (
-                                <SwiperSlide key={index}>
-                                    <ArticleItem 
-                                        id={item.id}
-                                        title={item.title}
-                                        intro={item.intro}
-                                        thumbnail={item.thumbnail}
-                                        author={item.author}
-                                        publishAt={item.publishAt}
-                                        tag={item.tag}
-                                        isCard
-                                    />
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
+                        <ArticleSlider />
                         :
                         <div className="home-article__wrapper">
                             { articles
@@ -172,55 +143,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className='contact'>
-                <div className="container-lg">
-                    <div className='row gy-4 justify-content-center justify-content-lg-between'>
-                        <div className='col-11 col-sm-10 col-md-8 col-lg-6'>
-                            <div className='contact-heading'>
-                                <h2 className='h4'>
-                                    <span className='fw-bold'>Bạn đã sẵn sàng</span>
-                                    <br />
-                                    <span className='h5'>cho một cuộc hành trình mới</span>
-                                </h2>
-                                <p className='mt-2 mt-lg-3'>Mọi cuộc hành trình đều bắt đầu từ một bước nhỏ. Hãy để chúng tôi trở thành đối tác của bạn! Dưới đây là các kênh liên hệ thuận tiện để bạn gửi thắc mắc hoặc yêu cầu hỗ trợ</p>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.518076121442!2d106.64740547691352!3d10.848144589305132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f6a71a06c3%3A0x7847cb03321c5b9e!2zUGjhuqFtIHbEg24gY2hpw6p1!5e0!3m2!1svi!2s!4v1731997031195!5m2!1svi!2s" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-                        <div className='col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5'>
-                            <div className='contact-form'>
-                                <div className='mb-4'>
-                                    <p className='text-md fw-bold mb-2'>Điền vào form dưới đây để đăng ký tư vấn từ 4U Chúng tôi!</p>
-                                    <p className='text-sm'>Sau khi nhấn gửi bạn sẽ được bộ phận hỗ trợ tư vấn liên hệ ngay nhé! Sẽ không lâu đâu</p>
-                                </div>
-                                <form action="">
-                                    <div className="form-floating mb-3">
-                                        <input type="text" className="form-control" id="floatingName" placeholder="Họ và tên" />
-                                        <label htmlFor="floatingName">Họ và tên</label>
-                                    </div>
-                                    <div className="form-floating mb-3">
-                                        <input type="tel" className="form-control" id="floatingPhone" placeholder="Số điện thoại" />
-                                        <label htmlFor="floatingEmail">Số điện thoại</label>
-                                    </div>
-                                    <div className="form-floating mb-3">
-                                        <input type="email" className="form-control" id="floatingEmail" placeholder="Email" />
-                                        <label htmlFor="floatingEmail">Email</label>
-                                    </div>
-                                    <div className="form-floating">
-                                        <textarea className="form-control" placeholder="Lời nhắn" id="floatingTextarea"></textarea>
-                                        <label htmlFor="floatingTextarea">Lời nhắn</label>
-                                    </div>
-                                    <button className="btn justify-content-center rounded-4 w-100 mt-4">
-                                        <VscGitStashApply/>
-                                        Ứng tuyển
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="partner my-4 my-lg-5">
+            <section className="partner">
                 <Swiper
                     slidesPerView={"auto"}
                     spaceBetween={32}
@@ -246,6 +169,54 @@ export default function Home() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
+            </section>
+            
+            <section className="contact">
+                <div className="container-lg">
+                    <div className="position-relative">
+                        <div className="contact__content">
+                            <div className="contact__content__top">
+                                <div className="dots-decoration"></div>
+                            </div>
+                            <div className="contact__content__body">
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <p className="contact__content__body--title h4 mb-2 mb-md-3">Bạn đã sẵn sàng cho một cuộc hành trình mới</p>
+                                        <p className="contact__content__body--des mb-2 mb-md-3">Mọi cuộc hành trình đều bắt đầu từ một bước nhỏ. Hãy để chúng tôi trở thành đối tác của bạn! Dưới đây là các kênh liên hệ thuận tiện để bạn gửi thắc mắc hoặc yêu cầu hỗ trợ</p>
+                                        <div className='contact__content__body--btn d-flex flex-wrap align-items-center gap-2 mb-3 mb-md-4'>
+                                            <a href="#" className='btn'>
+                                                <img className="" src='imgs/facebook-logo.png'/>
+                                                <div>
+                                                    <p>Find us on</p>
+                                                    <p>Facebook</p>
+                                                </div>
+                                            </a>
+                                            <a href="#" className='btn'>
+                                                <img className="" src='imgs/zalo-logo.png'/>
+                                                <div>
+                                                    <p>Tư vấn ngay</p>
+                                                    <p>Zalo</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div className="contact__content__body--qrcode d-flex align-items-center gap-3">
+                                            <div>
+                                                <img className="" src='imgs/qr.jpeg'/>
+                                            </div>
+                                            <p className='text-sm'>Quét mã để biết thêm thông tin trên ứng dụng Zalo!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="contact__img">
+                            <div className="contact__img--wrap d-flex justify-content-center align-items-center gap-3">
+                                <img className="hover lazy" src='imgs/mockup.png'/>
+                                <img className="hang lazy" src='imgs/mockup.png'/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     );

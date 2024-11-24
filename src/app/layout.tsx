@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'swiper/css';
+import 'swiper/css/navigation';
 import "@/styles/global.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";

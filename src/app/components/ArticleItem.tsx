@@ -23,21 +23,21 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ id, title, intro, thumbnail, 
                 </Link>
             </div>
             <div className="article-item__body">
-                <div className="article-item__body--tag d-flex flex-wrap align-items-center column-gap-2 row-gap-1">
+                <div className="article-item__body--tag">
                     {tag.map((item, index) => (
                         <p key={index}>{item}</p>
                     ))}
                 </div>
                 <h3 className="article-item__body--title">
-                    <Link href={`/article/${id}`}>{title}</Link>
+                    <Link href={`/article/${id}`} className="text-lg fw-bold">{title}</Link>
                 </h3>
                 <p className="article-item__body--intro">{intro}</p>
-                <div className="d-flex flex-wrap-reverse justify-content-between align-items-center row-gap-2 column-gap-4 mt-auto">
-                    <div className="article-item__body--author d-flex align-items-center gap-2">
+                <div className="article-item__body--more mt-auto">
+                    <div className="article-item__body--more--author d-flex align-items-center gap-2">
                         <LuUser2 />
                         <p>{author}</p>
                     </div>
-                    <div className="article-item__body--time d-flex align-items-center gap-1">
+                    <div className="article-item__body--more--time d-flex align-items-center gap-1">
                         <LuClock />
                         <p>{publishAt}</p>
                     </div>

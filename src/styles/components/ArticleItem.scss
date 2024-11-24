@@ -15,11 +15,35 @@
             &__thumbnail {
                 flex-shrink: 0;
                 aspect-ratio: 1;
-                width: 194px;
+                width: 122px;
+                @include respond-to(xs) {
+                    width: 160px;
+                }
+                @include respond-to(sm) {
+                    width: 190px;
+                }
             }
             &__body {
+                &--tag, &--more {
+                    display: none;
+                    @include respond-to(sm) {
+                        display: flex
+                    }
+                }
                 &--title a {
                     @include line-clamp(1);
+                    @include respond-to(xs) {
+                        @include line-clamp(2);
+                    }
+                    @include respond-to(sm) {
+                        @include line-clamp(1);
+                    }
+                }
+                &--intro {
+                    @include line-clamp(3);
+                    @include respond-to(sm) {
+                        @include line-clamp(2);
+                    }
                 }
             }
         }
@@ -64,13 +88,21 @@
     }
     &__body {
         flex-grow: 1;
-        padding: 16px 20px;
+        padding: 14px 16px;
         display: flex;
         flex-direction: column;
         gap: 8px;
         border-radius: 16px 0 16px 16px;
         transition: all 0.45s ease;
+        @include respond-to(sm) {
+            padding: 16px 20px;
+        }
         &--tag {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            column-gap: 8px;
+            row-gap: 4px;
             p {
                 padding: 4px 12px;
                 font-size: 12px;
@@ -80,29 +112,38 @@
                 background-color: $gray;
             }
         }
-        &--title {
-            font-size: 20px;
-            line-height: 26px;
-            font-weight: 700;
-        }
         &--intro {
             @include color-text(0.85);
             @include line-clamp(2);
-        }
-        &--author, &--time {
             font-size: 14px;
             line-height: 20px;
-        }
-        &--author {
-            svg {
-                padding: 6px;
-                font-size: 32px;
-                background-color: $gray;
-                border-radius: 50%;
+            @include respond-to(xs) {
+                font-size: 16px;
+                line-height: 24px;
             }
         }
-        &--time {
-            @include color-text(0.5);
+        &--more {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 24px;
+            row-gap: 8px;
+            &--author, &--time {
+                font-size: 14px;
+                line-height: 20px;
+            }
+            &--author {
+                svg {
+                    padding: 6px;
+                    font-size: 32px;
+                    background-color: $gray;
+                    border-radius: 50%;
+                }
+            }
+            &--time {
+                @include color-text(0.5);
+            }
         }
     }
 }
