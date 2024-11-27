@@ -211,8 +211,8 @@ export default function Home() {
                         </div>
                         <div className="contact__img">
                             <div className="contact__img--wrap d-flex justify-content-center align-items-center gap-3">
-                                <img className="hover lazy" src='imgs/mockup.png'/>
-                                <img className="hang lazy" src='imgs/mockup.png'/>
+                                <img className="hover lazy" src='imgs/mockup/mockup1.png'/>
+                                <img className="hang lazy" src='imgs/mockup/mockup2.png'/>
                             </div>
                         </div>
                     </div>

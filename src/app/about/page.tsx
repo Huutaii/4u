@@ -154,7 +154,7 @@ export default function About() {
                                     <div key={index}>
                                         <p>{item.time}</p>
                                         <h3 className="h6 fw-bold">{item.title}</h3>
-                                        <p className="mt-3">{item.subtitle}</p>
+                                        <p className="mt-2 mt-sm-3">{item.subtitle}</p>
                                     </div>
                                 ))}
                             </div>

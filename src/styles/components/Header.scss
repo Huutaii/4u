@@ -1,67 +1,244 @@
-.header {
+header {
     z-index: 9;
     position: fixed;
-    bottom: 0;
     left: 0;
     right: 0;
-    padding: 8px 0;
     transition: all 0.35s ease;
-    @include respond-to(sm) {
-        top: 0;
-        bottom: unset;
-    }
-    &-wraper {
+    
+}
+
+.header-pc {
+    top: 0;
+    padding: 8px 0;
+    &__wrapper {
         background-color: #FFFFFF;
-        padding: 6px 8px;
+        padding: 0 8px;
         border-radius: 99px;
         box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    }
-    img {
-        width: 54px;
-    }
-
-    &-menu {
-        flex: 1;
-        @include respond-to(sm) {
-            flex: none;
+        position: relative;
+        img {
+            width: 54px;
         }
-        & > div {
-            flex: 1;
-            @include respond-to(sm) {
-                flex: none;
-            }
-        }
-    }
-    ul {
-        flex: 1;
-        gap: 8px;
-        @include reset-ul;
-        @include respond-to(sm) {
-            flex: none;
-        }
-        @include respond-to(lg) {
-            gap: 24px;
-        }
-        li {
-            font-size: 12px;
-            line-height: 18px;
-            font-weight: 500;
-            flex: 1;
-            @include respond-to(sm) {
-                flex: none;
-                font-size: 14px;
-                line-height: 20px;
-            }
-            @include respond-to(lg) {
-                font-size: 16px;
-                line-height: 24px;
-            }
-            svg {
-                font-size: 24px;
-                @include respond-to(sm) {
-                    display: none;
+        & > ul {
+            & > li {
+                &:hover > ul {
+                    top: 100%;
+                }
+                & > a {
+                    padding: 20px 14px;
+                    border-bottom: 2px solid transparent;
+                }
+                & > ul {
+                    top: calc(100% - 24px);
+                    left: unset !important;
                 }
             }
+            ul {
+                display: unset;
+                position: absolute;
+                top: 0;
+                left: calc(100% - 24px);
+                min-width: 224px;
+                background-color: #FFFFFF;
+                box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+                opacity: 0;
+                pointer-events: none;
+                transition: 0.35s;
+                li {
+                    a {
+                        padding: 10px 16px;
+                        border-right: 2px solid transparent;
+                    }
+                }
+            }
+        }
+        ul {
+            @include reset-ul;
+            li {
+                position: relative;
+                &:hover {
+                    & > a {
+                        color: $primary;
+                        background-color: $primary-400;
+                        border-color: $primary;
+                    }
+                    & > ul {
+                        opacity: 1;
+                        pointer-events: all;
+                        left: 100%;
+                    }
+                }
+                a {
+                    display: block;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    &__link {
+        &:hover > div {
+            opacity: 1;
+            pointer-events: all;
+            top: calc(100% + 8px);
+        }
+        button {
+            padding: 10px;
+            svg {
+                font-size: 24px;
+            }
+        }
+        & > div {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #FFFFFF;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-radius: 16px;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.35s;
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 100%;
+                left: 0;
+                width: 100%;
+                height: 16px;
+                background-color: transparent;
+            }
+        }
+        
+        &__list {
+            padding: 24px 48px;
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+            max-height: 50vh;
+            overflow-y: scroll;
+            @include respond-to(lg) {
+                padding: 32px 72px;
+            }
+            @include respond-to(xl) {
+                gap: 24px;
+            }
+            & > * {
+                aspect-ratio: 16/9;
+                border: 1px solid #e8e7ec;
+                border-radius: 12px;
+                overflow: hidden;
+                position: relative;
+                &:hover {
+                    div {
+                        opacity: 1;
+                    }
+                }
+                div {
+                    padding: 24px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    color: #FFFFFF;
+                    background-color: rgb(52 52 54 / 0.55);
+                    opacity: 0;
+                    transition: 0.35s;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+.header-mobile {
+    bottom: 0;
+    padding: 8px 0;
+    background-color: #FFFFFF;
+    border-radius: 16px 16px 0 0;
+    box-shadow:  0px -0.07px 0.22px 0px rgba(30, 41, 59, 0.01), 0px -0.16px 0.53px 0px rgba(30, 41, 59, 0.01), 0px -0.3px 1px 0px rgba(30, 41, 59, 0.01), 0px -0.54px 1.79px 0px rgba(30, 41, 59, 0.02), 0px -1px 3.35px 0px rgba(30, 41, 59, 0.02), 0px -2.4px 8.01px 0px rgba(30, 41, 59, 0.03);
+    ul {
+        @include reset-ul;
+        align-items: end;
+        li {
+            flex: 1;
+            svg {
+                font-size: 20px;
+                @include respond-to(sm) {
+                    font-size: 24px;
+                }
+            }
+            p {
+                font-size: 12px;
+                line-height: 18px;
+                @include line-clamp;
+                @include respond-to(xs) {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+                @include respond-to(sm) {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+    &__logo {
+        position: absolute;
+        top: -32px;
+        width: 56px;
+        @include respond-to(sm) {
+            top: -38px;
+            width: 64px;
+        }
+        img {
+            width: 100%;
+        }
+        & > div {
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(100% + 16px);
+            height: calc(100% + 16px);
+            background-color: #FFFFFF;
+            border-radius: 50%;
+            box-shadow:  0px -0.07px 0.22px 0px rgba(30, 41, 59, 0.01), 0px -0.16px 0.53px 0px rgba(30, 41, 59, 0.01), 0px -0.3px 1px 0px rgba(30, 41, 59, 0.01), 0px -0.54px 1.79px 0px rgba(30, 41, 59, 0.02), 0px -1px 3.35px 0px rgba(30, 41, 59, 0.02), 0px -2.4px 8.01px 0px rgba(30, 41, 59, 0.03);
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                top: 12px;
+                width: 28px;
+                height: 28px;
+                background-color: transparent;
+                border-radius: 50%;
+                @include respond-to(sm) {
+                    top: 18px;
+                }
+            }
+            &::before {
+                left: -27px;
+                box-shadow: 12px 18px rgba(255, 255, 255, 1);
+            }
+            &::after {
+                right: -27px;
+                box-shadow: -12px 18px rgba(255, 255, 255, 1);
+            }
+        }
+        & + p {
+            padding: 0 8px;
+            color: $primary;
+            background-color: $primary-400;
+            border: 1px solid $primary;
+            border-radius: 99px;
         }
     }
 }

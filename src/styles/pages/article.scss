@@ -1,14 +1,4 @@
 .article {
-    .heading {
-        padding: 8rem 0 16px;
-        @include respond-to(sm) {
-            padding: 14rem 0 24px;
-        }
-        @include respond-to(lg) {
-            padding: 16rem 0 4rem;
-        }
-    }
-
     &-main {
         padding: 24px 0;
         background: url('/imgs/wave.png') no-repeat center;

@@ -1,9 +1,15 @@
 .article {
     &-detail {
+        .heading {
+            padding: 0;
+        }
         &__heading {
-            padding: 8rem 0 24px;
+            padding: 5rem 0 16px;
             border-bottom: 1px solid $gray-600;
             @include respond-to(sm) {
+                padding: 8rem 0 24px;
+            }
+            @include respond-to(md) {
                 padding: 14rem 0 24px;
             }
             @include respond-to(lg) {

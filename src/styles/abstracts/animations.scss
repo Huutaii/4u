@@ -138,3 +138,14 @@ $shadowColour: rgba(0, 0, 0, .6);
         transform:rotate3d(0, 0, 1, 0deg);
     }
 }
+
+@keyframes aniqrcode {
+    0% {
+        top: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        top: 100%;
+        transform: translateY(0);
+    }
+}

@@ -205,7 +205,7 @@
                             line-height: 2vw;
                         }
                         @include respond-to(lg) {
-                            line-height: 20px;
+                            // line-height: 20px;
                             font-weight: 500;
                         }
                     }
@@ -468,8 +468,25 @@
                     width: 64px;
                     background-color: #FFFFFF;
                     border-radius: 8px;
+                    overflow: hidden;
+                    position: relative;
                     @include respond-to(md) {
                         width: 84px;
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 10%;
+                        background-image: linear-gradient(rgba(0, 104, 255, 0), $primary);
+                        animation-name: aniqrcode;
+                        animation-duration: 1.5s;
+                        animation-iteration-count: infinite;
+                        animation-timing-function: ease-in-out;
+                        z-index: 9;
+                        opacity: .7;
                     }
                 }
             }

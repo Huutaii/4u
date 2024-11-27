@@ -1,15 +1,26 @@
 .footer {
-    padding: 48px 0 92px;
+    padding: 24px 0 108px;
     background-color: $primary-700;
     background-image: url('/imgs/footer_bg.png');
+    background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
     color: #FFF;
     @include respond-to(sm) {
+        padding: 48px 0 124px;
+        background-position: center;
+    }
+    @include respond-to(md) {
         padding: 48px 0 16px;
     }
+    @include respond-to(xxl) {
+        background-position: unset;
+    }
     img {
-        width: 72px;
+        width: 64px;
+        @include respond-to(sm) {
+            width: 72px;
+        }
     }
     &-heading {
         display: flex;
@@ -64,6 +75,7 @@
         margin-top: 16px;
         padding-top: 16px;
         @include color-primary-400(0.5);
+        border-top: 1px solid rgba(229, 240, 255, 0.5);
         & > * {
             @include color-primary-400(0.5);
         }
