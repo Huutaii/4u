@@ -77,7 +77,7 @@ export default function About() {
                                     <p className="mb-2 mb-lg-3">Đội ngũ nhân viên của chúng tôi không chỉ được đào tạo bài bản, mà còn được khuyến khích để thể hiện sự chân thành và nhiệt tình trong từng khoảnh khắc.</p>
                                     <p>Chúng tôi tin rằng, thái độ phục vụ tốt nhất sẽ tạo ra những ấn tượng mạnh mẽ, và chính điều đó sẽ khiến khách hàng quay lại với chúng tôi.</p>
                                 </div>
-                                <a href="/recruit" className="btn icon-decor">
+                                <a href="/job" className="btn icon-decor">
                                     Tham gia
                                     <IoIosArrowRoundForward/>
                                 </a>

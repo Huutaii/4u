@@ -11,7 +11,7 @@ const Ads: React.FC = () => {
                     <br />
                     ngay
                 </p>
-                <a href="/recruit" className="btn mt-3">Xem thêm</a>
+                <a href="/job" className="btn mt-3">Xem thêm</a>
             </div>
         </div>
     );

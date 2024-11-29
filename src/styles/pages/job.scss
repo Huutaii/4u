@@ -1,4 +1,4 @@
-.recruit {
+.job {
     background-color: $bg;
     .heading {
         &::before {
@@ -17,8 +17,12 @@
         &__intro {
             max-width: 712px;
             margin: 8px auto 0;
-            font-size: 18px;
-            line-height: 26px;
+            font-size: 16px;
+            line-height: 24px;
+            @include respond-to(sm) {
+                font-size: 18px;
+                line-height: 26px;
+            }
         }
         form {
             max-width: 846px;
@@ -27,16 +31,28 @@
     }
     &-main {
         padding: 24px 0;
+        @include respond-to(sm) {
+            padding: 0 0 40px 0;
+        }
         @include respond-to(lg) {
             padding: 40px 0;
         }
     }
     &-list {
-        position: sticky;
-        top: 6rem;
         display: grid;
         gap: 16px;
         grid-template-columns: repeat(1, 1fr);
+        @include respond-to(sm) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include respond-to(md) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include respond-to(lg) {
+            grid-template-columns: repeat(1, 1fr);
+            position: sticky;
+            top: 6rem;
+        }
     }
 
     &-item {
@@ -67,12 +83,12 @@
                 align-items: center;
                 column-gap: 4px;
             }
-            &.recruit-item__info {
+            &.job-item__info {
                 svg {
                     font-size: 18px;
                 }
             }
-            &.recruit-item__more {
+            &.job-item__more {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 8px;
@@ -85,96 +101,7 @@
             }
         }
     }
-    &-desc {
-        padding: 24px;
-        background-color: #FFFFFF;
-        border-radius: 16px;
-        box-shadow: 0px 4px 20px 0px rgba(0,0,0,.06);
-        &__heading {
-            padding: 16px;
-            color: #FFFFFF;
-            background: url('/imgs/parttern_bg.png') no-repeat center;
-            background-size: cover;
-            border-radius: 16px;
-            box-shadow: 0px 4px 20px 0px rgba(0,0,0,.06);
-            ul {
-                list-style: none;
-                padding-left: 0;
-                margin-bottom: 0;
-                display: grid;
-                column-gap: 24px;
-                row-gap: 14px;
-                grid-template-columns: repeat(2, 1fr);
-                @include respond-to(sm) {
-                    grid-template-columns: repeat(3, 1fr);
-                }
-                li {
-                    display: flex;
-                    align-items: center;
-                    column-gap: 8px;
-                    svg {
-                        flex-shrink: 0;
-                        padding: 8px;
-                        font-size: 38px;
-                        color: $primary;
-                        background-color: $primary-400;
-                        border-radius: 50%;
-                    }
-                    div > p:last-child {
-                        @include color-primary-400(0.85);
-                    }
-                }
-            }
-        }
-        article {
-            margin-top: 24px;
-            & > * {
-                margin-bottom: 8px;
-                &:first-child {
-                    margin-top: 0;
-                }
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-            h2, h3 {
-                margin-top: 24px;
-                font-size: 20px;
-                line-height: 28px;
-                font-weight: 700;
-            }
-            ul {
-                padding-left: 20px;
-            }
-        }
-        &__footer {
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid $gray;
-            & > p {
-                margin-bottom: 16px;
-                font-size: 20px;
-                line-height: 28px;
-                font-weight: 700;
-            }
-            ul {
-                list-style: none;
-                padding-left: 0;
-                margin-bottom: 0;
-                display: flex;
-                gap: 8px;
-                li {
-                    padding: 2px 14px;
-                    display: flex;
-                    align-items: center;
-                    column-gap: 4px;
-                    font-weight: 500;
-                    background-color: $gray;
-                    border-radius: 99px;
-                }
-            }
-        }
-    }
+
     &-process {
         padding: 40px 0;
         background-color: #FFFFFF;

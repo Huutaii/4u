@@ -34,12 +34,12 @@ const pcMenus = [
     },
     {
         name: "Tuyển dụng",
-        url: "/recruit",
+        url: "/job",
         children: [
-            { name: "Quản lý nhà trọ", url: "/recruit" },
-            { name: "Chuyên viên kinh doanh", url: "/recruit" },
-            { name: "Bảo trì kỹ thuật", url: "/recruit" },
-            { name: "Chăm sóc khách hàng", url: "/recruit" }
+            { name: "Quản lý nhà trọ", url: "/job" },
+            { name: "Chuyên viên kinh doanh", url: "/job" },
+            { name: "Bảo trì kỹ thuật", url: "/job" },
+            { name: "Chăm sóc khách hàng", url: "/job" }
         ]
     }
 ];
@@ -57,19 +57,19 @@ const mobileMenus = [
     { name: "Trang chủ", url: "/" },
     {
         name: "Tuyển dụng",
-        url: "/recruit",
+        url: "/job",
         children: [
-            { name: "Quản lý nhà trọ", url: "/recruit" },
-            { name: "Chuyên viên kinh doanh", url: "/recruit" },
-            { name: "Bảo trì kỹ thuật", url: "/recruit" },
-            { name: "Chăm sóc khách hàng", url: "/recruit" }
+            { name: "Quản lý nhà trọ", url: "/job" },
+            { name: "Chuyên viên kinh doanh", url: "/job" },
+            { name: "Bảo trì kỹ thuật", url: "/job" },
+            { name: "Chăm sóc khách hàng", url: "/job" }
         ]
     },
 ];
 const iconMapping = {
     "/about": <TbInfoSquareRounded />,
     "/article": <FaNewspaper />,
-    "/recruit": <VscGitStashApply />,
+    "/job": <VscGitStashApply />,
 };
 
 const Header: React.FC = () => {

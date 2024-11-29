@@ -1,0 +1,104 @@
+.job-desc {
+    padding: 16px;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0px 4px 20px 0px rgba(0,0,0,.06);
+    @include respond-to(xs) {
+        padding: 24px;
+    }
+    &__heading {
+        padding: 16px;
+        color: #FFFFFF;
+        background: url('/imgs/parttern_bg.png') no-repeat;
+        background-position: left;
+        background-size: cover;
+        border-radius: 16px;
+        box-shadow: 0px 4px 20px 0px rgba(0,0,0,.06);
+        @include respond-to(sm) {
+            background-position: unset;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            display: grid;
+            column-gap: 24px;
+            row-gap: 14px;
+            grid-template-columns: repeat(2, 1fr);
+            @include respond-to(sm) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            li {
+                display: flex;
+                align-items: center;
+                column-gap: 8px;
+                svg {
+                    flex-shrink: 0;
+                    padding: 8px;
+                    font-size: 38px;
+                    color: $primary;
+                    background-color: $primary-400;
+                    border-radius: 50%;
+                }
+                div > p:last-child {
+                    @include color-primary-400(0.85);
+                }
+            }
+        }
+    }
+    article {
+        margin-top: 16px;
+        @include respond-to(xs) {
+            margin-top: 24px;
+        }
+        & > * {
+            margin-bottom: 8px;
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        h2, h3 {
+            margin-top: 24px;
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 700;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    }
+    &__footer {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid $gray;
+        @include respond-to(xs) {
+            margin-top: 24px;
+            padding-top: 24px;
+        }
+        & > p {
+            margin-bottom: 16px;
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 700;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            display: flex;
+            gap: 8px;
+            li {
+                padding: 2px 14px;
+                display: flex;
+                align-items: center;
+                column-gap: 4px;
+                font-weight: 500;
+                background-color: $gray;
+                border-radius: 99px;
+            }
+        }
+    }
+}

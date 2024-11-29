@@ -17,7 +17,7 @@ const RecruitCta: React.FC = () => {
                                 <span className="h4">Gia nhập cùng chúng tôi</span>
                             </p>
                             <div className="d-flex flex-wrap-reverse align-items-center row-gap-3 column-gap-5 mt-3 mt-xl-4">
-                                <a href="/recruit" className="btn icon-decor">
+                                <a href="/job" className="btn icon-decor">
                                     Ứng tuyển
                                     <IoIosArrowRoundForward/>
                                 </a>
